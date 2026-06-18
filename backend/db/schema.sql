@@ -191,3 +191,44 @@ CREATE TABLE IF NOT EXISTS association_feedback (
 ALTER TABLE donations ADD COLUMN IF NOT EXISTS status       TEXT DEFAULT 'paid'; -- pending / paid / failed
 ALTER TABLE donations ADD COLUMN IF NOT EXISTS provider     TEXT;
 ALTER TABLE donations ADD COLUMN IF NOT EXISTS provider_ref TEXT;
+
+-- ============ محتوى الموقع الحقيقي (نبذة/رؤية/رسالة/أنواع/شركاء/فريق/حالات) ============
+
+-- نصوص تعريفية (من نحن / رؤيتنا / رسالتنا / شعار)
+CREATE TABLE IF NOT EXISTS site_content (
+  id        SERIAL PRIMARY KEY,
+  key       TEXT UNIQUE,        -- about / mission / vision / projects_tagline
+  value_ar  TEXT
+);
+
+-- أنواع المشاريع وشعاراتها (الأقسام الـ11)
+CREATE TABLE IF NOT EXISTS project_types (
+  id         SERIAL PRIMARY KEY,
+  slug       TEXT,
+  name_ar    TEXT,
+  slogan_ar  TEXT,
+  image_url  TEXT
+);
+
+-- الشركاء/الداعمون
+CREATE TABLE IF NOT EXISTS partners (
+  id        SERIAL PRIMARY KEY,
+  name      TEXT,
+  logo_url  TEXT
+);
+
+-- مجموعات الفريق (الإدارة/فريق العمل/المتطوعين)
+CREATE TABLE IF NOT EXISTS team_groups (
+  id        SERIAL PRIMARY KEY,
+  name_ar   TEXT,
+  image_url TEXT
+);
+
+-- حالات متاحة للكفالة (أسماء حقيقية من الموقع)
+CREATE TABLE IF NOT EXISTS featured_cases (
+  id        SERIAL PRIMARY KEY,
+  name      TEXT,
+  country   TEXT,
+  summary_ar TEXT,
+  image_url TEXT
+);

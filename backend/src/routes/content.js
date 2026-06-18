@@ -39,4 +39,46 @@ router.get("/country-pulse", async (req, res, next) => {
   } catch (e) { next(e); }
 });
 
+// نصوص الموقع (من نحن / رؤية / رسالة / شعار)
+router.get("/site", async (_req, res, next) => {
+  try {
+    const { rows } = await query(`SELECT key, value_ar FROM site_content`);
+    const map = {};
+    rows.forEach((r) => (map[r.key] = r.value_ar));
+    res.json(map);
+  } catch (e) { next(e); }
+});
+
+// أنواع المشاريع وشعاراتها (الأقسام الـ11)
+router.get("/project-types", async (_req, res, next) => {
+  try {
+    const { rows } = await query(`SELECT * FROM project_types ORDER BY id`);
+    res.json(rows);
+  } catch (e) { next(e); }
+});
+
+// الشركاء/الداعمون
+router.get("/partners", async (_req, res, next) => {
+  try {
+    const { rows } = await query(`SELECT * FROM partners ORDER BY id`);
+    res.json(rows);
+  } catch (e) { next(e); }
+});
+
+// مجموعات الفريق
+router.get("/team", async (_req, res, next) => {
+  try {
+    const { rows } = await query(`SELECT * FROM team_groups ORDER BY id`);
+    res.json(rows);
+  } catch (e) { next(e); }
+});
+
+// حالات متاحة للكفالة
+router.get("/cases", async (_req, res, next) => {
+  try {
+    const { rows } = await query(`SELECT * FROM featured_cases ORDER BY id`);
+    res.json(rows);
+  } catch (e) { next(e); }
+});
+
 export default router;
