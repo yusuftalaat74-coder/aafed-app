@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../models/project.dart';
 import '../services/api_service.dart';
+import 'project_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -218,7 +219,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => _openProject(p),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.gold,
                   foregroundColor: Colors.white,
@@ -233,6 +234,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       );
+
+  void _openProject(Project p) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => ProjectDetailScreen(projectId: p.id, title: p.titleAr),
+      ),
+    );
+  }
 
   Widget _sectionTitle(String t) => Align(
         alignment: Alignment.centerRight,

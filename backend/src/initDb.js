@@ -33,6 +33,12 @@ async function main() {
        (1,'التشطيب والتجهيز الطبي',62,'now',true,'2026-06-15'),
        (1,'الافتتاح وأول مريض',0,'pending',false,'2026-09-01')`
     );
+    await pool.query(
+      `INSERT INTO monitoring_reports (project_id, kind, body_ar, approved) VALUES
+       (1,'progress','اكتمل صبّ الأساسات وبدأ بناء الجدران الخارجية.',true),
+       (1,'spend','صرف 540$ على التجهيزات الطبية الأولية — موثّق.',true),
+       (1,'progress','تركيب الأبواب والنوافذ وبدء أعمال الدهان الداخلي.',true)`
+    );
     console.log("✓ تمت إضافة بيانات تجريبية");
   }
   await pool.end();
