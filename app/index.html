@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>المؤسسة الإفريقية للتعليم والتنمية — AAFED</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;background:#0E3449;font-family:'Tajawal',sans-serif;}
+  body{display:flex;justify-content:center;}
+  /* مرحلة بعرض ثابت 348 (عرض التصميم) تُكبّر لملء الشاشة */
+  #stage{position:relative;width:348px;transform-origin:top center;}
+  .frame{position:relative;width:348px;min-height:760px;background:#F1F4F1;overflow:hidden;display:none;}
+  .frame.on{display:block;}
+  /* الأزرار القابلة للنقر */
+  [data-go],[data-act]{cursor:pointer;}
+  ._tap{transition:transform .08s;}
+  ._tap:active{transform:scale(.97);}
+  /* Toast */
+  #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0E3449;color:#fff;
+    padding:11px 20px;border-radius:30px;font-family:'Tajawal';font-weight:700;font-size:14px;opacity:0;
+    transition:opacity .25s;z-index:9999;pointer-events:none;}
+  #toast.show{opacity:1;}
+</style>
+</head>
+<body>
+<div id="stage">
+<div class="frame" id="s0" data-i="0">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+
+          <!-- status -->
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:14px 24px 6px; font-size:13px; font-weight:800; color:#0E3449; z-index:20;">
+            <span>9:41</span>
+            <div style="display:flex; align-items:center; gap:7px;">
+              <span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#0E3449;border-radius:1px;"></i><i style="width:3px;height:8px;background:#0E3449;border-radius:1px;"></i><i style="width:3px;height:11px;background:#0E3449;border-radius:1px;"></i></span>
+              <span style="font-family:ui-monospace,monospace; font-size:11px;">5G</span>
+              <span style="width:22px;height:11px;border:1.5px solid #0E3449;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#0E3449;border-radius:1px;"></span></span>
+            </div>
+          </div>
+
+          <div class="scr" style="flex:1; overflow-y:auto;">
+            <!-- header -->
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:8px 16px 12px;">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <div style="width:44px; height:44px; border-radius:13px; background:#fff; box-shadow:0 2px 8px rgba(14,52,73,.12); display:flex; align-items:center; justify-content:center;"><img src="9a715b55-f34f-4360-8d3b-fa1e8a1ed446" style="width:36px; height:36px; object-fit:contain;"></div>
+                <div>
+                  <div style="font-size:14px; font-weight:800; color:#0E3449; line-height:1.2;">أهلاً، عبدالله</div>
+                  <div style="font-size:11px; color:#7d8c84;">الجمعية الإفريقية للتعليم والتنمية</div>
+                </div>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <div style="display:flex; align-items:center; gap:5px; background:#fff; border:1px solid #E4E9E5; border-radius:20px; padding:7px 10px; font-size:12px; font-weight:800; color:#2E7D43;">ع<span style="font-size:8px; color:#9aa89c;">▾</span></div>
+                <div style="position:relative; width:38px; height:38px; border-radius:11px; background:#fff; border:1px solid #E4E9E5; display:flex; align-items:center; justify-content:center;"><span style="width:16px;height:13px;border:2px solid #0E3449;border-radius:4px;box-sizing:border-box;"></span><span style="position:absolute; top:7px; left:8px; width:7px; height:7px; background:#7CB342; border:1.5px solid #fff; border-radius:50%;"></span></div>
+              </div>
+            </div>
+
+            <!-- hero -->
+            <div style="margin:0 16px; border-radius:22px; overflow:hidden; background:#fff; box-shadow:0 14px 30px -16px rgba(14,52,73,.3);">
+              <div style="position:relative; height:178px; background:#DDE5DE; background-image:repeating-linear-gradient(135deg,#0e344912 0 11px,#0000 11px 22px); display:flex; align-items:center; justify-content:center;">
+                <span style="font-family:ui-monospace,monospace; font-size:10px; color:#9aa89c;"><img src="assets/logo.png" alt="صورة الحملة الرئيسية" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span>
+                <div style="position:absolute; top:13px; right:13px; background:#fff; color:#2E7D43; font-size:11px; font-weight:800; padding:5px 11px; border-radius:20px; box-shadow:0 2px 6px rgba(0,0,0,.12);">● حملة عاجلة</div>
+                <div style="position:absolute; inset:auto 0 0 0; padding:15px 15px 16px; background:linear-gradient(to top, rgba(14,52,73,.92), rgba(14,52,73,0));">
+                  <div style="color:#fff; font-size:17px; font-weight:800; line-height:1.35;">مركز صحي — مقاطعة صوفالا</div>
+                  <div style="color:#bcd5c6; font-size:12px; margin-top:3px;">موزمبيق · خدمة 8,000 مستفيد</div>
+                </div>
+              </div>
+              <div style="padding:15px;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; font-size:12px; margin-bottom:8px;">
+                  <span style="font-weight:900; color:#2E7D43; font-size:15px;">62%</span>
+                  <span style="color:#7d8c84;">جُمع <b style="color:#0E3449; font-weight:800;">312,400</b> من 500,000 ر.س</span>
+                </div>
+                <div style="height:9px; background:#E7ECE7; border-radius:6px; overflow:hidden;"><div style="width:62%; height:100%; background:linear-gradient(90deg,#2E7D43,#7CB342); border-radius:6px;"></div></div>
+                <div style="display:flex; gap:9px; margin-top:14px;">
+                  <button style="flex:1; background:#0E3449; color:#fff; border:none; border-radius:13px; padding:13px; font-weight:800; font-size:15px; font-family:inherit; cursor:pointer;">تبرّع الآن</button>
+                  <button style="background:#fff; color:#0E3449; border:1.5px solid #D7DED8; border-radius:13px; padding:13px 16px; font-weight:800; font-size:14px; font-family:inherit; cursor:pointer;">تابِع</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- quick actions -->
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:9px; padding:16px;">
+              <div style="background:#fff; border:1px solid #EBEFEB; border-radius:17px; padding:12px 4px; text-align:center;"><div style="width:34px;height:34px;border-radius:11px;margin:0 auto 8px;background:#2E7D431a;display:flex;align-items:center;justify-content:center;"><span style="width:14px;height:14px;border-radius:50%;background:#2E7D43;"></span></div><div style="font-size:11px;font-weight:800;color:#0E3449;">تبرّع</div></div>
+              <div style="background:#fff; border:1px solid #EBEFEB; border-radius:17px; padding:12px 4px; text-align:center;"><div style="width:34px;height:34px;border-radius:11px;margin:0 auto 8px;background:#0E34491a;display:flex;align-items:center;justify-content:center;"><span style="width:14px;height:14px;border-radius:50%;border:3px solid #0E3449;box-sizing:border-box;"></span></div><div style="font-size:11px;font-weight:800;color:#0E3449;">كفالة</div></div>
+              <div style="background:#fff; border:1px solid #EBEFEB; border-radius:17px; padding:12px 4px; text-align:center;"><div style="width:34px;height:34px;border-radius:11px;margin:0 auto 8px;background:#7CB3421f;display:flex;align-items:center;justify-content:center;"><span style="width:12px;height:12px;background:#5a9a33;transform:rotate(45deg);"></span></div><div style="font-size:11px;font-weight:800;color:#0E3449;">الزكاة</div></div>
+              <div style="background:#fff; border:1px solid #EBEFEB; border-radius:17px; padding:12px 4px; text-align:center;"><div style="width:34px;height:34px;border-radius:11px;margin:0 auto 8px;background:#0E34491a;display:flex;align-items:center;justify-content:center;"><span style="width:13px;height:13px;border-radius:3px;background:#0E3449;"></span></div><div style="font-size:11px;font-weight:800;color:#0E3449;">تطوّع</div></div>
+            </div>
+
+            <!-- continue tracking -->
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:2px 16px 11px;">
+              <span style="font-size:15px; font-weight:800; color:#0E3449;">تابع مشاريعك</span>
+              <span style="font-size:12px; color:#2E7D43; font-weight:800;">محفظتي ‹</span>
+            </div>
+            <div style="margin:0 16px 16px; background:#fff; border:1px solid #EBEFEB; border-radius:18px; padding:13px;">
+              <div style="display:flex; gap:12px; align-items:center;">
+                <div style="width:52px;height:52px;flex:none;border-radius:13px;background:#DDE5DE;background-image:repeating-linear-gradient(135deg,#0e344912 0 8px,#0000 8px 16px);display:flex;align-items:center;justify-content:center;"><span style="font-family:ui-monospace,monospace;font-size:8px;color:#9aa89c;"><img src="assets/logo.png" alt="صورة" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span></div>
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between; align-items:center;"><div style="font-size:13px; font-weight:800; color:#0E3449;">بئر مياه — زامبيزيا</div><span style="font-size:11px; font-weight:900; color:#2E7D43;">80%</span></div>
+                  <div style="height:6px; background:#E7ECE7; border-radius:4px; overflow:hidden; margin:7px 0 6px;"><div style="width:80%;height:100%;background:#7CB342;"></div></div>
+                  <div style="display:flex; align-items:center; gap:6px; font-size:11px; color:#7d8c84;"><span style="width:6px;height:6px;border-radius:50%;background:#7CB342;"></span>تحديث جديد · تركيب المضخة</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- impact strip -->
+            <div style="margin:0 16px 18px; background:linear-gradient(135deg,#0E3449,#2E7D43); border-radius:20px; padding:17px 18px; color:#fff;">
+              <div style="font-size:12px; font-weight:700; opacity:.82; margin-bottom:13px;">أثرك التراكمي عبر مشاريعك</div>
+              <div style="display:flex; align-items:center; justify-content:space-between;">
+                <div style="text-align:center;"><div style="font-size:21px;font-weight:900;">2,840</div><div style="font-size:11px;opacity:.78;margin-top:2px;">مستفيد</div></div>
+                <div style="width:1px;height:32px;background:#ffffff2e;"></div>
+                <div style="text-align:center;"><div style="font-size:21px;font-weight:900;">6</div><div style="font-size:11px;opacity:.78;margin-top:2px;">مشاريع</div></div>
+                <div style="width:1px;height:32px;background:#ffffff2e;"></div>
+                <div style="text-align:center;"><div style="font-size:21px;font-weight:900;">2</div><div style="font-size:11px;opacity:.78;margin-top:2px;">كفالات</div></div>
+              </div>
+            </div>
+
+            <!-- campaigns -->
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:0 16px 11px;">
+              <span style="font-size:15px; font-weight:800; color:#0E3449;">حملات حسب النوع</span>
+              <span style="font-size:12px; color:#2E7D43; font-weight:800;">الكل ‹</span>
+            </div>
+            <div class="scr" style="display:flex; gap:11px; overflow-x:auto; padding:0 16px 4px;">
+              <div style="flex:none; width:158px; background:#fff; border:1px solid #EBEFEB; border-radius:16px; overflow:hidden;">
+                <div style="height:90px; background:#DDE5DE; background-image:repeating-linear-gradient(135deg,#0e344912 0 9px,#0000 9px 18px); display:flex; align-items:center; justify-content:center;"><span style="font-family:ui-monospace,monospace;font-size:9px;color:#9aa89c;">مسجد</span></div>
+                <div style="padding:11px;"><div style="font-size:12px;font-weight:800;color:#0E3449;line-height:1.4;">مسجد — نامبولا</div><div style="height:5px;background:#E7ECE7;border-radius:3px;overflow:hidden;margin:8px 0 5px;"><div style="width:45%;height:100%;background:#2E7D43;"></div></div><div style="font-size:10px;color:#2E7D43;font-weight:800;">45%</div></div>
+              </div>
+              <div style="flex:none; width:158px; background:#fff; border:1px solid #EBEFEB; border-radius:16px; overflow:hidden;">
+                <div style="height:90px; background:#DDE5DE; background-image:repeating-linear-gradient(135deg,#7cb3421f 0 9px,#0000 9px 18px); display:flex; align-items:center; justify-content:center;"><span style="font-family:ui-monospace,monospace;font-size:9px;color:#9aa89c;">مدرسة</span></div>
+                <div style="padding:11px;"><div style="font-size:12px;font-weight:800;color:#0E3449;line-height:1.4;">مدرسة — بيرا</div><div style="height:5px;background:#E7ECE7;border-radius:3px;overflow:hidden;margin:8px 0 5px;"><div style="width:61%;height:100%;background:#7CB342;"></div></div><div style="font-size:10px;color:#2E7D43;font-weight:800;">61%</div></div>
+              </div>
+              <div style="flex:none; width:24px;"></div>
+            </div>
+
+            <!-- قصص من موزمبيق -->
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:18px 16px 11px;">
+              <span style="font-size:15px; font-weight:800; color:#0E3449;">قصص من موزمبيق</span>
+              <span style="font-size:12px; color:#2E7D43; font-weight:800;">الكل ‹</span>
+            </div>
+            <div class="scr" style="display:flex; gap:12px; overflow-x:auto; padding:0 16px 4px;">
+              <div style="flex:none; width:204px; border-radius:18px; overflow:hidden; position:relative; height:248px; background:#16475c; background-image:repeating-linear-gradient(135deg,#ffffff14 0 11px,#0000 11px 22px);">
+                <span style="position:absolute; top:12px; right:12px; background:#7CB342; color:#0E3449; font-size:10px; font-weight:900; padding:4px 9px; border-radius:7px;">حياة تغيّرت</span>
+                <span style="position:absolute; top:42%; left:50%; transform:translate(-50%,-50%); font-family:ui-monospace,monospace; font-size:10px; color:#7fa6b5;"><img src="assets/logo.png" alt="صورة جوزيه" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span>
+                <div style="position:absolute; inset:auto 0 0 0; padding:36px 14px 15px; background:linear-gradient(to top, rgba(14,52,73,.95), rgba(14,52,73,0));">
+                  <div style="color:#fff; font-size:15px; font-weight:800;">جوزيه · 11 سنة</div>
+                  <div style="color:#bcd5c6; font-size:11px; margin:4px 0 8px; line-height:1.6;">«كنت أمشي ساعتين للماء. اليوم البئر بجوار بيتي وأذهب للمدرسة.»</div>
+                  <span style="color:#7CB342; font-size:11px; font-weight:800;">اقرأ الحدوتة ‹</span>
+                </div>
+              </div>
+              <div style="flex:none; width:204px; border-radius:18px; overflow:hidden; position:relative; height:248px; background:#1f5a3a; background-image:repeating-linear-gradient(135deg,#ffffff14 0 11px,#0000 11px 22px);">
+                <span style="position:absolute; top:12px; right:12px; background:#fff; color:#2E7D43; font-size:10px; font-weight:900; padding:4px 9px; border-radius:7px;">حلم تحقّق</span>
+                <span style="position:absolute; top:42%; left:50%; transform:translate(-50%,-50%); font-family:ui-monospace,monospace; font-size:10px; color:#9ec3ab;"><img src="assets/logo.png" alt="صورة ماريا" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span>
+                <div style="position:absolute; inset:auto 0 0 0; padding:36px 14px 15px; background:linear-gradient(to top, rgba(14,52,73,.95), rgba(14,52,73,0));">
+                  <div style="color:#fff; font-size:15px; font-weight:800;">ماريا · أم لأربعة</div>
+                  <div style="color:#cfe0d4; font-size:11px; margin:4px 0 8px; line-height:1.6;">«مشروع الخياطة الصغير صار مصدر رزق يعيل أسرتي بكرامة.»</div>
+                  <span style="color:#7CB342; font-size:11px; font-weight:800;">اقرأ الحدوتة ‹</span>
+                </div>
+              </div>
+              <div style="flex:none; width:204px; border-radius:18px; overflow:hidden; position:relative; height:248px; background:#16475c; background-image:repeating-linear-gradient(135deg,#ffffff14 0 11px,#0000 11px 22px);">
+                <span style="position:absolute; top:12px; right:12px; background:#7CB342; color:#0E3449; font-size:10px; font-weight:900; padding:4px 9px; border-radius:7px;">تعليم</span>
+                <span style="position:absolute; top:42%; left:50%; transform:translate(-50%,-50%); font-family:ui-monospace,monospace; font-size:10px; color:#7fa6b5;"><img src="assets/logo.png" alt="صورة كارلوس" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span>
+                <div style="position:absolute; inset:auto 0 0 0; padding:36px 14px 15px; background:linear-gradient(to top, rgba(14,52,73,.95), rgba(14,52,73,0));">
+                  <div style="color:#fff; font-size:15px; font-weight:800;">كارلوس · 16 سنة</div>
+                  <div style="color:#bcd5c6; font-size:11px; margin:4px 0 8px; line-height:1.6;">«كفالة معلّم في مدرستنا فتحت لي باب الجامعة. أدرس الطب الآن.»</div>
+                  <span style="color:#7CB342; font-size:11px; font-weight:800;">اقرأ الحدوتة ‹</span>
+                </div>
+              </div>
+              <div style="flex:none; width:24px;"></div>
+            </div>
+
+            <div style="height:14px;"></div>
+          </div>
+
+          <!-- tab bar -->
+          <div style="flex:none; display:flex; justify-content:space-around; align-items:flex-end; padding:10px 8px 22px; background:#fff; border-top:1px solid #EBEFEB;">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><span style="width:18px;height:18px;border-radius:6px;background:#0E3449;"></span><span style="font-size:10px;font-weight:800;color:#0E3449;">الرئيسية</span></div>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><span style="width:17px;height:17px;border-radius:50%;border:2px solid #B7BFB5;box-sizing:border-box;"></span><span style="font-size:10px;font-weight:700;color:#9aa89c;">المشاريع</span></div>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><span style="width:20px;height:15px;border-radius:4px;border:2px solid #B7BFB5;box-sizing:border-box;"></span><span style="font-size:10px;font-weight:700;color:#9aa89c;">محفظتي</span></div>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><span style="width:16px;height:16px;border-radius:50%;border:2px solid #B7BFB5;box-sizing:border-box;"></span><span style="font-size:10px;font-weight:700;color:#9aa89c;">المجتمع</span></div>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><span style="display:flex;gap:3px;height:17px;align-items:center;"><i style="width:4px;height:4px;border-radius:50%;background:#B7BFB5;"></i><i style="width:4px;height:4px;border-radius:50%;background:#B7BFB5;"></i><i style="width:4px;height:4px;border-radius:50%;background:#B7BFB5;"></i></span><span style="font-size:10px;font-weight:700;color:#9aa89c;">المزيد</span></div>
+          </div>
+        </div>
+<div class="frame" id="s1" data-i="1">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+
+          <!-- dark header with hero -->
+          <div style="background:#0E3449; flex:none;">
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:14px 22px 8px; font-size:13px; font-weight:800; color:#fff;">
+              <span>9:41</span>
+              <div style="display:flex; align-items:center; gap:7px;">
+                <span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:8px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:11px;background:#fff;border-radius:1px;"></i></span>
+                <span style="font-family:ui-monospace,monospace; font-size:11px;">5G</span>
+                <span style="width:22px;height:11px;border:1.5px solid #fff;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#fff;border-radius:1px;"></span></span>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:2px 16px 12px; color:#fff;">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span style="width:32px;height:32px;border-radius:9px;border:1.5px solid #ffffff3a;display:flex;align-items:center;justify-content:center;font-size:16px;">→</span>
+                <div><div style="font-size:15px; font-weight:800;">مركز صحي — صوفالا</div><div style="font-size:11px; color:#9ec3ab;">رقم المشروع MZ-HC-118</div></div>
+              </div>
+              <span style="width:32px;height:32px;border-radius:9px;border:1.5px solid #ffffff3a;display:flex;align-items:center;justify-content:center;font-size:13px;">⤴</span>
+            </div>
+          </div>
+
+          <div class="scr" style="flex:1; overflow-y:auto;">
+            <!-- hero image -->
+            <div style="position:relative; height:150px; background:#16475c; background-image:repeating-linear-gradient(135deg,#ffffff14 0 11px,#0000 11px 22px); display:flex; align-items:center; justify-content:center;">
+              <span style="font-family:ui-monospace,monospace; font-size:10px; color:#7fa6b5;"><img src="assets/logo.png" alt="صورة موقع المشروع" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span>
+              <div style="position:absolute; bottom:12px; right:14px; background:#7CB342; color:#0E3449; font-size:11px; font-weight:900; padding:5px 12px; border-radius:20px;">قيد التنفيذ · 62%</div>
+            </div>
+
+            <!-- funded summary card -->
+            <div style="margin:-26px 14px 0; background:#fff; border-radius:18px; padding:15px; box-shadow:0 12px 28px -16px rgba(14,52,73,.32); position:relative;">
+              <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:9px;">
+                <span style="font-size:12px; color:#7d8c84;">التمويل</span>
+                <span style="font-size:12px; color:#7d8c84;">جُمع <b style="color:#0E3449;">312,400</b> / 500,000 ر.س</span>
+              </div>
+              <div style="height:10px; background:#E7ECE7; border-radius:6px; overflow:hidden;"><div style="width:62%;height:100%;background:linear-gradient(90deg,#2E7D43,#7CB342);border-radius:6px;"></div></div>
+              <div style="display:flex; gap:8px; margin-top:13px;">
+                <div style="flex:1; background:#F4F7F4; border-radius:12px; padding:10px; text-align:center;"><div style="font-size:15px;font-weight:900;color:#0E3449;">8,000</div><div style="font-size:10px;color:#7d8c84;">مستفيد متوقّع</div></div>
+                <div style="flex:1; background:#F4F7F4; border-radius:12px; padding:10px; text-align:center;"><div style="font-size:15px;font-weight:900;color:#0E3449;">14</div><div style="font-size:10px;color:#7d8c84;">تقرير موثّق</div></div>
+                <div style="flex:1; background:#F4F7F4; border-radius:12px; padding:10px; text-align:center;"><div style="font-size:15px;font-weight:900;color:#0E3449;">٣ / ٦</div><div style="font-size:10px;color:#7d8c84;">المرحلة</div></div>
+              </div>
+            </div>
+
+            <!-- segment tabs -->
+            <div style="display:flex; gap:6px; margin:15px 14px 4px; background:#E7ECE7; border-radius:13px; padding:4px;">
+              <div style="flex:1; text-align:center; background:#fff; border-radius:10px; padding:9px 0; font-size:12px; font-weight:800; color:#0E3449; box-shadow:0 1px 3px rgba(0,0,0,.08);">التايم لاين</div>
+              <div style="flex:1; text-align:center; padding:9px 0; font-size:12px; font-weight:700; color:#7d8c84;">التقارير</div>
+              <div style="flex:1; text-align:center; padding:9px 0; font-size:12px; font-weight:700; color:#7d8c84;">المالية</div>
+              <div style="flex:1; text-align:center; padding:9px 0; font-size:12px; font-weight:700; color:#7d8c84;">المجتمع</div>
+            </div>
+
+            <!-- TIMELINE -->
+            <div style="padding:16px 18px 8px;">
+              <div style="position:relative; padding-right:26px;">
+                <!-- vertical line -->
+                <div style="position:absolute; top:8px; bottom:8px; right:9px; width:2px; background:#E0E6E0;"></div>
+                <div style="position:absolute; top:8px; right:9px; width:2px; height:43%; background:linear-gradient(#2E7D43,#7CB342);"></div>
+
+                <!-- node done -->
+                <div style="position:relative; margin-bottom:18px;">
+                  <span style="position:absolute; right:-23px; top:2px; width:20px; height:20px; border-radius:50%; background:#2E7D43; display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:900;">✓</span>
+                  <div style="font-size:13px; font-weight:800; color:#0E3449;">اختيار المنطقة</div>
+                  <div style="display:inline-flex; align-items:center; gap:5px; margin-top:5px; background:#2E7D431a; color:#2E7D43; font-size:10px; font-weight:800; padding:3px 8px; border-radius:7px;"><span style="width:5px;height:5px;border-radius:50%;background:#2E7D43;"></span>تقرير موثّق · 12 يناير</div>
+                </div>
+                <!-- node done -->
+                <div style="position:relative; margin-bottom:18px;">
+                  <span style="position:absolute; right:-23px; top:2px; width:20px; height:20px; border-radius:50%; background:#2E7D43; display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:900;">✓</span>
+                  <div style="font-size:13px; font-weight:800; color:#0E3449;">اعتماد الميزانية والتصميم</div>
+                  <div style="display:inline-flex; align-items:center; gap:5px; margin-top:5px; background:#2E7D431a; color:#2E7D43; font-size:10px; font-weight:800; padding:3px 8px; border-radius:7px;"><span style="width:5px;height:5px;border-radius:50%;background:#2E7D43;"></span>تقرير موثّق · 28 فبراير</div>
+                </div>
+                <!-- node active -->
+                <div style="position:relative; margin-bottom:18px;">
+                  <span style="position:absolute; right:-25px; top:0; width:24px; height:24px; border-radius:50%; background:#7CB342; border:3px solid #DFF0CE; display:flex; align-items:center; justify-content:center; color:#0E3449; font-size:9px; font-weight:900;"></span>
+                  <div style="background:#fff; border:1.5px solid #7CB342; border-radius:14px; padding:12px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center;"><div style="font-size:13px; font-weight:900; color:#0E3449;">التأسيس والبناء</div><span style="font-size:12px; font-weight:900; color:#2E7D43;">62%</span></div>
+                    <div style="height:6px; background:#E7ECE7; border-radius:4px; overflow:hidden; margin:8px 0;"><div style="width:62%;height:100%;background:#7CB342;"></div></div>
+                    <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                      <span style="background:#F4F7F4; color:#5e6e6a; font-size:10px; font-weight:700; padding:3px 7px; border-radius:6px;">📷 صور أسبوعية</span>
+                      <span style="background:#F4F7F4; color:#5e6e6a; font-size:10px; font-weight:700; padding:3px 7px; border-radius:6px;">إثبات صرف</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- upcoming -->
+                <div style="position:relative; margin-bottom:18px; opacity:.62;">
+                  <span style="position:absolute; right:-22px; top:2px; width:18px; height:18px; border-radius:50%; background:#fff; border:2px solid #C5CFC7; box-sizing:border-box;"></span>
+                  <div style="font-size:13px; font-weight:800; color:#5e6e6a;">التجهيز الطبي</div>
+                  <div style="font-size:11px; color:#9aa89c; margin-top:2px;">قادم</div>
+                </div>
+                <div style="position:relative; margin-bottom:18px; opacity:.62;">
+                  <span style="position:absolute; right:-22px; top:2px; width:18px; height:18px; border-radius:50%; background:#fff; border:2px solid #C5CFC7; box-sizing:border-box;"></span>
+                  <div style="font-size:13px; font-weight:800; color:#5e6e6a;">الافتتاح وأول مريض</div>
+                  <div style="font-size:11px; color:#9aa89c; margin-top:2px;">قادم</div>
+                </div>
+                <div style="position:relative; opacity:.62;">
+                  <span style="position:absolute; right:-22px; top:2px; width:18px; height:18px; border-radius:50%; background:#fff; border:2px solid #C5CFC7; box-sizing:border-box;"></span>
+                  <div style="font-size:13px; font-weight:800; color:#5e6e6a;">التشغيل والاستمرارية</div>
+                  <div style="font-size:11px; color:#9aa89c; margin-top:2px;">كفالة طبيب · حملات صحية</div>
+                </div>
+              </div>
+            </div>
+            <div style="height:80px;"></div>
+          </div>
+
+          <!-- sticky donate -->
+          <div style="flex:none; padding:11px 16px 22px; background:#fff; border-top:1px solid #EBEFEB; display:flex; gap:9px;">
+            <button style="flex:1; background:#0E3449; color:#fff; border:none; border-radius:13px; padding:14px; font-weight:800; font-size:15px; font-family:inherit; cursor:pointer;">تبرّع لهذا المشروع</button>
+            <button style="background:#F4F7F4; border:none; border-radius:13px; padding:0 16px; font-size:18px; cursor:pointer;">🔔</button>
+          </div>
+        </div>
+<div class="frame" id="s2" data-i="2">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+
+          <div style="flex:none; padding:14px 16px 12px; background:#fff; border-bottom:1px solid #EBEFEB;">
+            <div style="display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:800; color:#0E3449; margin-bottom:12px;">
+              <span>9:41</span>
+              <div style="display:flex; align-items:center; gap:7px;"><span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#0E3449;border-radius:1px;"></i><i style="width:3px;height:8px;background:#0E3449;border-radius:1px;"></i><i style="width:3px;height:11px;background:#0E3449;border-radius:1px;"></i></span><span style="font-family:ui-monospace,monospace;font-size:11px;">5G</span><span style="width:22px;height:11px;border:1.5px solid #0E3449;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#0E3449;border-radius:1px;"></span></span></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span style="width:30px;height:30px;border-radius:9px;border:1.5px solid #E0E6E0;display:flex;align-items:center;justify-content:center;font-size:15px;color:#0E3449;">→</span>
+              <div><div style="font-size:16px; font-weight:900; color:#0E3449;">تقارير المتابعة</div><div style="font-size:11px; color:#7d8c84;">مركز صحي — صوفالا · 14 تقريراً</div></div>
+            </div>
+          </div>
+
+          <!-- approval banner -->
+          <div style="margin:13px 14px 0; background:#0E34490d; border:1px solid #0E344918; border-radius:13px; padding:11px 13px; display:flex; align-items:center; gap:10px;">
+            <span style="width:30px;height:30px;flex:none;border-radius:9px;background:#2E7D43;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;">✓</span>
+            <div style="font-size:11px; color:#3f5751; line-height:1.55;">كل تقرير يرفعه موظف ميداني يمرّ على <b style="color:#0E3449;">لجنة التوثيق</b> ثم <b style="color:#0E3449;">اعتماد المدير</b> قبل ظهوره — في سجل تدقيق غير قابل للتعديل.</div>
+          </div>
+
+          <!-- filter chips -->
+          <div class="scr" style="display:flex; gap:7px; overflow-x:auto; padding:13px 14px 11px;">
+            <span style="flex:none; background:#0E3449; color:#fff; font-size:12px; font-weight:800; padding:7px 14px; border-radius:20px;">الكل</span>
+            <span style="flex:none; background:#fff; border:1px solid #E4E9E5; color:#5e6e6a; font-size:12px; font-weight:700; padding:7px 14px; border-radius:20px;">تقدّم بناء</span>
+            <span style="flex:none; background:#fff; border:1px solid #E4E9E5; color:#5e6e6a; font-size:12px; font-weight:700; padding:7px 14px; border-radius:20px;">إثبات صرف</span>
+            <span style="flex:none; background:#fff; border:1px solid #E4E9E5; color:#5e6e6a; font-size:12px; font-weight:700; padding:7px 14px; border-radius:20px;">تشغيل</span>
+          </div>
+
+          <div class="scr" style="flex:1; overflow-y:auto; padding:0 14px 18px;">
+            <!-- report card 1 -->
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; overflow:hidden; margin-bottom:12px;">
+              <div style="position:relative; height:118px; background:#DDE5DE; background-image:repeating-linear-gradient(135deg,#0e344912 0 10px,#0000 10px 20px); display:flex; align-items:center; justify-content:center;">
+                <span style="font-family:ui-monospace,monospace; font-size:10px; color:#9aa89c;">صور البناء — 4 صور</span>
+                <span style="position:absolute; top:11px; right:11px; background:#0E3449; color:#fff; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">تقدّم بناء</span>
+              </div>
+              <div style="padding:13px;">
+                <div style="font-size:14px; font-weight:800; color:#0E3449; line-height:1.4;">إنجاز جدران الطابق الأرضي</div>
+                <div style="display:flex; align-items:center; gap:10px; font-size:11px; color:#7d8c84; margin:7px 0 10px;">
+                  <span style="display:flex; align-items:center; gap:3px;">📍 صوفالا</span>
+                  <span>·</span><span>3 يونيو 2026</span>
+                </div>
+                <div style="display:flex; align-items:center; justify-content:space-between; padding-top:10px; border-top:1px solid #F0F3F0;">
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <div style="width:24px;height:24px;border-radius:50%;background:#DDE5DE;"></div>
+                    <span style="font-size:11px; color:#5e6e6a;">رفعه: م. جواو · موظف ميداني</span>
+                  </div>
+                  <span style="display:inline-flex; align-items:center; gap:4px; background:#2E7D431a; color:#2E7D43; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">✓ موثّق · معتمد</span>
+                </div>
+              </div>
+            </div>
+            <!-- report card 2 (spending) -->
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:13px; margin-bottom:12px;">
+              <div style="display:flex; align-items:flex-start; justify-content:space-between;">
+                <div style="flex:1;">
+                  <span style="background:#7CB3421f; color:#5a9a33; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">إثبات صرف</span>
+                  <div style="font-size:14px; font-weight:800; color:#0E3449; margin:9px 0 4px;">دفعة مواد البناء — الأسمنت والحديد</div>
+                  <div style="font-size:11px; color:#7d8c84;">28 مايو 2026 · فاتورة #4471 مرفقة</div>
+                </div>
+                <div style="text-align:left; flex:none; padding-right:10px;"><div style="font-size:16px; font-weight:900; color:#0E3449;">48,200</div><div style="font-size:10px; color:#7d8c84;">ر.س</div></div>
+              </div>
+              <div style="display:flex; align-items:center; justify-content:space-between; padding-top:11px; margin-top:11px; border-top:1px solid #F0F3F0;">
+                <span style="font-size:11px; color:#5e6e6a;">مطابق للميزانية المعتمدة</span>
+                <span style="display:inline-flex; align-items:center; gap:4px; background:#2E7D431a; color:#2E7D43; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">✓ موثّق · معتمد</span>
+              </div>
+            </div>
+            <!-- report card 3 pending -->
+            <div style="background:#fff; border:1px dashed #D2C08A; border-radius:16px; padding:13px;">
+              <div style="display:flex; align-items:center; justify-content:space-between;">
+                <div><span style="background:#C9992f1f; color:#9a7720; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">قيد الاعتماد</span><div style="font-size:14px; font-weight:800; color:#0E3449; margin-top:9px;">صور تقدّم الأسبوع 9</div></div>
+                <span style="width:30px;height:30px;border-radius:50%;border:2px dashed #C9992f;display:flex;align-items:center;justify-content:center;color:#9a7720;font-size:13px;">⏳</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:7px; margin-top:11px; padding-top:11px; border-top:1px solid #F0F3F0;">
+                <span style="font-size:10px; color:#9a7720; font-weight:700;">لجنة التوثيق</span>
+                <span style="flex:1; height:2px; background:#EEE6CF; border-radius:2px; position:relative;"><span style="position:absolute; inset:0 50% 0 0; background:#C9992f; border-radius:2px;"></span></span>
+                <span style="font-size:10px; color:#b6bcb2; font-weight:700;">اعتماد المدير</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="flex:none; height:22px; background:#fff; border-top:1px solid #EBEFEB;"></div>
+        </div>
+<div class="frame" id="s3" data-i="3">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+
+          <div style="flex:none; padding:14px 16px 14px; background:#fff; border-bottom:1px solid #EBEFEB;">
+            <div style="display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:800; color:#0E3449; margin-bottom:12px;">
+              <span>9:41</span>
+              <div style="display:flex; align-items:center; gap:7px;"><span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#0E3449;border-radius:1px;"></i><i style="width:3px;height:8px;background:#0E3449;border-radius:1px;"></i><i style="width:3px;height:11px;background:#0E3449;border-radius:1px;"></i></span><span style="font-family:ui-monospace,monospace;font-size:11px;">5G</span><span style="width:22px;height:11px;border:1.5px solid #0E3449;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#0E3449;border-radius:1px;"></span></span></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span style="width:30px;height:30px;border-radius:9px;border:1.5px solid #E0E6E0;display:flex;align-items:center;justify-content:center;font-size:15px;color:#0E3449;">→</span>
+              <div><div style="font-size:16px; font-weight:900; color:#0E3449;">الشفافية المالية</div><div style="font-size:11px; color:#7d8c84;">مركز صحي — صوفالا</div></div>
+            </div>
+          </div>
+
+          <div class="scr" style="flex:1; overflow-y:auto; padding:14px 14px 20px;">
+            <!-- big numbers -->
+            <div style="background:linear-gradient(135deg,#0E3449,#16475c); border-radius:18px; padding:17px; color:#fff;">
+              <div style="font-size:12px; opacity:.8;">إجمالي المصروف الموثّق</div>
+              <div style="display:flex; align-items:baseline; gap:6px; margin:5px 0 12px;"><div style="font-size:28px; font-weight:900;">186,900</div><span style="font-size:13px; opacity:.85;">من 312,400 ر.س</span></div>
+              <div style="height:9px; background:#ffffff24; border-radius:6px; overflow:hidden;"><div style="width:60%; height:100%; background:#7CB342; border-radius:6px;"></div></div>
+              <div style="display:flex; justify-content:space-between; margin-top:8px; font-size:11px; opacity:.82;"><span>مصروف 60%</span><span>متبقٍّ 125,500 ر.س</span></div>
+            </div>
+
+            <!-- spend vs progress -->
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:15px; margin-top:13px;">
+              <div style="font-size:13px; font-weight:800; color:#0E3449; margin-bottom:14px;">الصرف مقابل التقدّم</div>
+              <div style="display:flex; align-items:flex-end; gap:10px; height:96px;">
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px;"><div style="display:flex; align-items:flex-end; gap:4px; height:74px;"><span style="width:14px; height:40px; background:#0E3449; border-radius:4px;"></span><span style="width:14px; height:46px; background:#7CB342; border-radius:4px;"></span></div><span style="font-size:10px; color:#7d8c84;">يناير</span></div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px;"><div style="display:flex; align-items:flex-end; gap:4px; height:74px;"><span style="width:14px; height:52px; background:#0E3449; border-radius:4px;"></span><span style="width:14px; height:56px; background:#7CB342; border-radius:4px;"></span></div><span style="font-size:10px; color:#7d8c84;">مارس</span></div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px;"><div style="display:flex; align-items:flex-end; gap:4px; height:74px;"><span style="width:14px; height:60px; background:#0E3449; border-radius:4px;"></span><span style="width:14px; height:62px; background:#7CB342; border-radius:4px;"></span></div><span style="font-size:10px; color:#7d8c84;">مايو</span></div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px;"><div style="display:flex; align-items:flex-end; gap:4px; height:74px;"><span style="width:14px; height:44px; background:#0E3449; border-radius:4px;"></span><span style="width:14px; height:46px; background:#7CB342; border-radius:4px;"></span></div><span style="font-size:10px; color:#7d8c84;">يونيو</span></div>
+              </div>
+              <div style="display:flex; gap:16px; margin-top:12px; padding-top:11px; border-top:1px solid #F0F3F0;">
+                <span style="display:flex; align-items:center; gap:6px; font-size:11px; color:#5e6e6a;"><i style="width:9px;height:9px;border-radius:2px;background:#0E3449;"></i>الصرف</span>
+                <span style="display:flex; align-items:center; gap:6px; font-size:11px; color:#5e6e6a;"><i style="width:9px;height:9px;border-radius:2px;background:#7CB342;"></i>نسبة الإنجاز</span>
+              </div>
+            </div>
+
+            <!-- breakdown -->
+            <div style="font-size:13px; font-weight:800; color:#0E3449; margin:16px 4px 10px;">توزيع الصرف حسب البند</div>
+            <div style="display:flex; flex-direction:column; gap:9px;">
+              <div style="background:#fff; border:1px solid #EBEFEB; border-radius:14px; padding:12px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;"><div style="display:flex; align-items:center; gap:8px;"><span style="width:9px;height:9px;border-radius:3px;background:#0E3449;"></span><span style="font-size:12px; font-weight:800; color:#0E3449;">الأساسات والبناء</span></div><span style="font-size:12px; font-weight:900; color:#0E3449;">98,400</span></div>
+                <div style="height:6px; background:#E7ECE7; border-radius:4px; overflow:hidden;"><div style="width:53%; height:100%; background:#0E3449;"></div></div>
+                <div style="display:flex; justify-content:space-between; margin-top:6px;"><span style="display:inline-flex; align-items:center; gap:3px; font-size:10px; color:#2E7D43; font-weight:800;">✓ 6 إثباتات صرف</span><span style="font-size:10px; color:#7d8c84;">53%</span></div>
+              </div>
+              <div style="background:#fff; border:1px solid #EBEFEB; border-radius:14px; padding:12px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;"><div style="display:flex; align-items:center; gap:8px;"><span style="width:9px;height:9px;border-radius:3px;background:#2E7D43;"></span><span style="font-size:12px; font-weight:800; color:#0E3449;">التجهيز الطبي</span></div><span style="font-size:12px; font-weight:900; color:#0E3449;">52,500</span></div>
+                <div style="height:6px; background:#E7ECE7; border-radius:4px; overflow:hidden;"><div style="width:28%; height:100%; background:#2E7D43;"></div></div>
+                <div style="display:flex; justify-content:space-between; margin-top:6px;"><span style="display:inline-flex; align-items:center; gap:3px; font-size:10px; color:#2E7D43; font-weight:800;">✓ 3 إثباتات صرف</span><span style="font-size:10px; color:#7d8c84;">28%</span></div>
+              </div>
+              <div style="background:#fff; border:1px solid #EBEFEB; border-radius:14px; padding:12px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;"><div style="display:flex; align-items:center; gap:8px;"><span style="width:9px;height:9px;border-radius:3px;background:#7CB342;"></span><span style="font-size:12px; font-weight:800; color:#0E3449;">النقل والتشغيل</span></div><span style="font-size:12px; font-weight:900; color:#0E3449;">36,000</span></div>
+                <div style="height:6px; background:#E7ECE7; border-radius:4px; overflow:hidden;"><div style="width:19%; height:100%; background:#7CB342;"></div></div>
+                <div style="display:flex; justify-content:space-between; margin-top:6px;"><span style="display:inline-flex; align-items:center; gap:3px; font-size:10px; color:#2E7D43; font-weight:800;">✓ 5 إثباتات صرف</span><span style="font-size:10px; color:#7d8c84;">19%</span></div>
+              </div>
+            </div>
+
+            <!-- 100% note -->
+            <div style="margin-top:14px; background:#2E7D430d; border:1px solid #2E7D4322; border-radius:14px; padding:13px; display:flex; align-items:center; gap:11px;">
+              <span style="width:34px;height:34px;flex:none;border-radius:10px;background:#2E7D43;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;">100%</span>
+              <div style="font-size:11px; color:#3f5751; line-height:1.55;"><b style="color:#0E3449;">100% من تبرّعك يصل للمشروع.</b> المصاريف التشغيلية للجمعية مموَّلة بشكل منفصل.</div>
+            </div>
+          </div>
+          <div style="flex:none; height:22px; background:#fff; border-top:1px solid #EBEFEB;"></div>
+        </div>
+<div class="frame" id="s4" data-i="4">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+
+          <div style="flex:none; padding:14px 16px 14px; background:#fff; border-bottom:1px solid #EBEFEB;">
+            <div style="display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:800; color:#0E3449; margin-bottom:12px;">
+              <span>9:41</span>
+              <div style="display:flex; align-items:center; gap:7px;"><span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#0E3449;border-radius:1px;"></i><i style="width:3px;height:8px;background:#0E3449;border-radius:1px;"></i><i style="width:3px;height:11px;background:#0E3449;border-radius:1px;"></i></span><span style="font-family:ui-monospace,monospace;font-size:11px;">5G</span><span style="width:22px;height:11px;border:1.5px solid #0E3449;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#0E3449;border-radius:1px;"></span></span></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span style="width:30px;height:30px;border-radius:9px;border:1.5px solid #E0E6E0;display:flex;align-items:center;justify-content:center;font-size:15px;color:#0E3449;">→</span>
+              <div><div style="font-size:16px; font-weight:900; color:#0E3449;">المجتمع والآراء</div><div style="font-size:11px; color:#7d8c84;">مركز صحي — صوفالا</div></div>
+            </div>
+          </div>
+
+          <div class="scr" style="flex:1; overflow-y:auto; padding:14px 14px 18px;">
+            <!-- dual rating -->
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:15px; display:flex; gap:12px;">
+              <div style="flex:1; text-align:center;"><div style="font-size:24px; font-weight:900; color:#0E3449;">4.8</div><div style="color:#7CB342; font-size:13px; letter-spacing:1px;">★★★★★</div><div style="font-size:11px; color:#7d8c84; margin-top:3px;">تقييم المشروع</div></div>
+              <div style="width:1px; background:#EBEFEB;"></div>
+              <div style="flex:1; text-align:center;"><div style="font-size:24px; font-weight:900; color:#0E3449;">4.9</div><div style="color:#7CB342; font-size:13px; letter-spacing:1px;">★★★★★</div><div style="font-size:11px; color:#7d8c84; margin-top:3px;">متابعة الجمعية</div></div>
+            </div>
+
+            <!-- connect with past donor -->
+            <div style="margin-top:13px; background:linear-gradient(135deg,#0E3449,#2E7D43); border-radius:16px; padding:15px; color:#fff;">
+              <div style="display:flex; align-items:center; gap:10px; margin-bottom:9px;">
+                <span style="width:34px;height:34px;border-radius:10px;background:#ffffff1f;display:flex;align-items:center;justify-content:center;font-size:16px;">💬</span>
+                <div style="font-size:14px; font-weight:800;">اسأل متبرّعاً سابقاً</div>
+              </div>
+              <div style="font-size:12px; opacity:.9; line-height:1.6;">تواصل مع من تبرّع لهذا المشروع من قبل واسأله عن تجربته — عبر نظام موافقة ووساطة وخصوصية داخل التطبيق.</div>
+              <button style="margin-top:12px; width:100%; background:#fff; color:#0E3449; border:none; border-radius:11px; padding:11px; font-weight:800; font-size:13px; font-family:inherit; cursor:pointer;">ابدأ محادثة موثّقة</button>
+            </div>
+
+            <!-- comments -->
+            <div style="font-size:13px; font-weight:800; color:#0E3449; margin:16px 4px 10px;">آراء المتبرّعين</div>
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:14px; margin-bottom:11px;">
+              <div style="display:flex; align-items:center; gap:9px; margin-bottom:9px;">
+                <div style="width:38px;height:38px;border-radius:50%;background:#DDE5DE;"></div>
+                <div style="flex:1;"><div style="display:flex; align-items:center; gap:6px;"><span style="font-size:13px; font-weight:800; color:#0E3449;">سارة الأحمدي</span><span style="display:inline-flex; align-items:center; gap:3px; background:#2E7D431a; color:#2E7D43; font-size:9px; font-weight:800; padding:2px 7px; border-radius:6px;">✓ متبرّع موثّق</span></div><div style="font-size:10px; color:#9aa89c;">قبل أسبوع</div></div>
+                <span style="color:#7CB342; font-size:11px;">★★★★★</span>
+              </div>
+              <div style="font-size:12px; color:#46554f; line-height:1.7;">تابعت المشروع من أول حجر. التقارير تصل بانتظام والصور حقيقية من الموقع. شفافية تطمئن القلب.</div>
+            </div>
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:14px; margin-bottom:11px;">
+              <div style="display:flex; align-items:center; gap:9px; margin-bottom:9px;">
+                <div style="width:38px;height:38px;border-radius:50%;background:#DDE5DE;"></div>
+                <div style="flex:1;"><div style="display:flex; align-items:center; gap:6px;"><span style="font-size:13px; font-weight:800; color:#0E3449;">خالد منصور</span><span style="display:inline-flex; align-items:center; gap:3px; background:#2E7D431a; color:#2E7D43; font-size:9px; font-weight:800; padding:2px 7px; border-radius:6px;">✓ متبرّع موثّق</span></div><div style="font-size:10px; color:#9aa89c;">قبل ٣ أسابيع</div></div>
+                <span style="color:#7CB342; font-size:11px;">★★★★☆</span>
+              </div>
+              <div style="font-size:12px; color:#46554f; line-height:1.7;">تجربة ممتازة، وأتمنى تسريع تقارير التشغيل بعد الافتتاح. الجمعية متجاوبة دائماً.</div>
+            </div>
+
+            <!-- institution testimonial -->
+            <div style="background:#0E34490a; border:1px solid #0E344918; border-radius:16px; padding:14px;">
+              <div style="display:flex; align-items:center; gap:9px; margin-bottom:9px;">
+                <div style="width:38px;height:38px;border-radius:10px;background:#fff;border:1px solid #E4E9E5;display:flex;align-items:center;justify-content:center;"><span style="width:18px;height:18px;border-radius:4px;background:#0E3449;"></span></div>
+                <div style="flex:1;"><div style="display:flex; align-items:center; gap:6px;"><span style="font-size:13px; font-weight:800; color:#0E3449;">مؤسسة النماء</span><span style="display:inline-flex; align-items:center; gap:3px; background:#0E34491a; color:#0E3449; font-size:9px; font-weight:800; padding:2px 7px; border-radius:6px;">شريك موثّق</span></div><div style="font-size:10px; color:#9aa89c;">مانح مؤسسي</div></div>
+              </div>
+              <div style="font-size:12px; color:#46554f; line-height:1.7;">شراكتنا مع الجمعية نموذج في الحوكمة. التقارير الرسمية الدورية بشعارنا سهّلت تدقيقنا الداخلي.</div>
+            </div>
+          </div>
+          <div style="flex:none; height:22px; background:#fff; border-top:1px solid #EBEFEB;"></div>
+        </div>
+<div class="frame" id="s5" data-i="5">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+
+          <!-- dark header -->
+          <div style="background:#0E3449; flex:none; padding:14px 18px 18px; color:#fff;">
+            <div style="display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:800; margin-bottom:14px;">
+              <span>9:41</span>
+              <div style="display:flex; align-items:center; gap:7px;"><span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:8px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:11px;background:#fff;border-radius:1px;"></i></span><span style="font-family:ui-monospace,monospace;font-size:11px;">5G</span><span style="width:22px;height:11px;border:1.5px solid #fff;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#fff;border-radius:1px;"></span></span></div>
+            </div>
+            <div style="font-size:18px; font-weight:900;">محفظتي</div>
+            <div style="font-size:12px; color:#9ec3ab; margin-top:2px;">أثرك التراكمي عبر كل مشاريعك</div>
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-top:15px;">
+              <div style="text-align:center;"><div style="font-size:20px; font-weight:900;">2,840</div><div style="font-size:10px; color:#9ec3ab;">مستفيد</div></div>
+              <div style="width:1px; height:30px; background:#ffffff2e;"></div>
+              <div style="text-align:center;"><div style="font-size:20px; font-weight:900;">6</div><div style="font-size:10px; color:#9ec3ab;">مشاريع</div></div>
+              <div style="width:1px; height:30px; background:#ffffff2e;"></div>
+              <div style="text-align:center;"><div style="font-size:20px; font-weight:900;">2</div><div style="font-size:10px; color:#9ec3ab;">كفالات</div></div>
+              <div style="width:1px; height:30px; background:#ffffff2e;"></div>
+              <div style="text-align:center;"><div style="font-size:20px; font-weight:900;">48.2k</div><div style="font-size:10px; color:#9ec3ab;">ر.س</div></div>
+            </div>
+          </div>
+
+          <!-- segment -->
+          <div style="display:flex; gap:6px; margin:14px 14px 4px; background:#E7ECE7; border-radius:13px; padding:4px;">
+            <div style="flex:1; text-align:center; background:#fff; border-radius:10px; padding:9px 0; font-size:12px; font-weight:800; color:#0E3449; box-shadow:0 1px 3px rgba(0,0,0,.08);">مشاريعي</div>
+            <div style="flex:1; text-align:center; padding:9px 0; font-size:12px; font-weight:700; color:#7d8c84;">كفالاتي</div>
+            <div style="flex:1; text-align:center; padding:9px 0; font-size:12px; font-weight:700; color:#7d8c84;">المكتمل</div>
+          </div>
+
+          <div class="scr" style="flex:1; overflow-y:auto; padding:12px 14px 18px;">
+            <!-- project rows -->
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:12px; margin-bottom:11px;">
+              <div style="display:flex; gap:11px;">
+                <div style="width:54px;height:54px;flex:none;border-radius:13px;background:#DDE5DE;background-image:repeating-linear-gradient(135deg,#0e344912 0 8px,#0000 8px 16px);display:flex;align-items:center;justify-content:center;"><span style="font-family:ui-monospace,monospace;font-size:8px;color:#9aa89c;"><img src="assets/logo.png" alt="صورة" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span></div>
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between; align-items:center;"><div style="font-size:13px; font-weight:800; color:#0E3449;">مركز صحي — صوفالا</div><span style="background:#7CB3421f; color:#5a9a33; font-size:9px; font-weight:800; padding:3px 7px; border-radius:6px;">قيد التنفيذ</span></div>
+                  <div style="height:6px; background:#E7ECE7; border-radius:4px; overflow:hidden; margin:9px 0 6px;"><div style="width:62%;height:100%;background:#7CB342;"></div></div>
+                  <div style="display:flex; justify-content:space-between; font-size:10px; color:#7d8c84;"><span style="color:#2E7D43; font-weight:800;">62% · المرحلة ٣/٦</span><span>● تحديث جديد</span></div>
+                </div>
+              </div>
+            </div>
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:12px; margin-bottom:11px;">
+              <div style="display:flex; gap:11px;">
+                <div style="width:54px;height:54px;flex:none;border-radius:13px;background:#DDE5DE;background-image:repeating-linear-gradient(135deg,#7cb3421f 0 8px,#0000 8px 16px);display:flex;align-items:center;justify-content:center;"><span style="font-family:ui-monospace,monospace;font-size:8px;color:#9aa89c;"><img src="assets/logo.png" alt="صورة" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span></div>
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between; align-items:center;"><div style="font-size:13px; font-weight:800; color:#0E3449;">بئر مياه — زامبيزيا</div><span style="background:#7CB3421f; color:#5a9a33; font-size:9px; font-weight:800; padding:3px 7px; border-radius:6px;">قيد التنفيذ</span></div>
+                  <div style="height:6px; background:#E7ECE7; border-radius:4px; overflow:hidden; margin:9px 0 6px;"><div style="width:80%;height:100%;background:#7CB342;"></div></div>
+                  <div style="display:flex; justify-content:space-between; font-size:10px; color:#7d8c84;"><span style="color:#2E7D43; font-weight:800;">80% · تركيب المضخة</span><span>صيانة دورية</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- sponsorship section -->
+            <div style="font-size:13px; font-weight:800; color:#0E3449; margin:14px 4px 10px;">كفالاتي</div>
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:13px; margin-bottom:11px;">
+              <div style="display:flex; align-items:center; gap:11px;">
+                <div style="width:46px;height:46px;flex:none;border-radius:50%;background:#DDE5DE;"></div>
+                <div style="flex:1;">
+                  <div style="display:flex; align-items:center; gap:6px;"><span style="font-size:13px; font-weight:800; color:#0E3449;">كفالة يتيم · أمين</span></div>
+                  <div style="font-size:11px; color:#7d8c84; margin-top:2px;">8 سنوات · نامبولا</div>
+                </div>
+                <div style="text-align:left;"><div style="font-size:13px; font-weight:900; color:#0E3449;">150 ر.س</div><div style="font-size:10px; color:#7d8c84;">شهرياً</div></div>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px; margin-top:11px; padding-top:11px; border-top:1px solid #F0F3F0;">
+                <span style="display:inline-flex; align-items:center; gap:4px; background:#2E7D431a; color:#2E7D43; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">✓ نشطة</span>
+                <span style="font-size:11px; color:#7d8c84;">التقرير القادم: ربع سنوي · يوليو 2026</span>
+              </div>
+            </div>
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:13px;">
+              <div style="display:flex; align-items:center; gap:11px;">
+                <div style="width:46px;height:46px;flex:none;border-radius:50%;background:#DDE5DE;"></div>
+                <div style="flex:1;">
+                  <div style="font-size:13px; font-weight:800; color:#0E3449;">كفالة إمام · مسجد نامبولا</div>
+                  <div style="font-size:11px; color:#7d8c84; margin-top:2px;">حلقات تحفيظ نشطة</div>
+                </div>
+                <div style="text-align:left;"><div style="font-size:13px; font-weight:900; color:#0E3449;">300 ر.س</div><div style="font-size:10px; color:#7d8c84;">شهرياً</div></div>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px; margin-top:11px; padding-top:11px; border-top:1px solid #F0F3F0;">
+                <span style="display:inline-flex; align-items:center; gap:4px; background:#2E7D431a; color:#2E7D43; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">✓ نشطة</span>
+                <span style="font-size:11px; color:#7d8c84;">آخر تقرير: عدد المصلين والدروس</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="flex:none; display:flex; justify-content:space-around; align-items:flex-end; padding:10px 8px 22px; background:#fff; border-top:1px solid #EBEFEB;">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><span style="width:18px;height:18px;border-radius:6px;border:2px solid #B7BFB5;box-sizing:border-box;"></span><span style="font-size:10px;font-weight:700;color:#9aa89c;">الرئيسية</span></div>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><span style="width:17px;height:17px;border-radius:50%;border:2px solid #B7BFB5;box-sizing:border-box;"></span><span style="font-size:10px;font-weight:700;color:#9aa89c;">المشاريع</span></div>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><span style="width:20px;height:15px;border-radius:4px;background:#0E3449;"></span><span style="font-size:10px;font-weight:800;color:#0E3449;">محفظتي</span></div>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><span style="width:16px;height:16px;border-radius:50%;border:2px solid #B7BFB5;box-sizing:border-box;"></span><span style="font-size:10px;font-weight:700;color:#9aa89c;">المجتمع</span></div>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><span style="display:flex;gap:3px;height:17px;align-items:center;"><i style="width:4px;height:4px;border-radius:50%;background:#B7BFB5;"></i><i style="width:4px;height:4px;border-radius:50%;background:#B7BFB5;"></i><i style="width:4px;height:4px;border-radius:50%;background:#B7BFB5;"></i></span><span style="font-size:10px;font-weight:700;color:#9aa89c;">المزيد</span></div>
+          </div>
+        </div>
+<div class="frame" id="s6" data-i="6">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+
+          <div style="flex:none; padding:14px 16px 14px; background:#fff; border-bottom:1px solid #EBEFEB;">
+            <div style="display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:800; color:#0E3449; margin-bottom:12px;">
+              <span>9:41</span>
+              <div style="display:flex; align-items:center; gap:7px;"><span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#0E3449;border-radius:1px;"></i><i style="width:3px;height:8px;background:#0E3449;border-radius:1px;"></i><i style="width:3px;height:11px;background:#0E3449;border-radius:1px;"></i></span><span style="font-family:ui-monospace,monospace;font-size:11px;">5G</span><span style="width:22px;height:11px;border:1.5px solid #0E3449;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#0E3449;border-radius:1px;"></span></span></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span style="width:30px;height:30px;border-radius:9px;border:1.5px solid #E0E6E0;display:flex;align-items:center;justify-content:center;font-size:15px;color:#0E3449;">→</span>
+              <div><div style="font-size:16px; font-weight:900; color:#0E3449;">تقرير أثرك</div><div style="font-size:11px; color:#7d8c84;">بئر مياه — زامبيزيا · مكتمل</div></div>
+            </div>
+          </div>
+
+          <div class="scr" style="flex:1; overflow-y:auto; padding:14px 14px 18px;">
+            <!-- emotional impact -->
+            <div style="background:linear-gradient(150deg,#2E7D43,#7CB342); border-radius:18px; padding:18px; color:#fff; text-align:center;">
+              <div style="font-size:13px; opacity:.92;">بفضلك، تغيّرت حياة</div>
+              <div style="font-size:40px; font-weight:900; margin:4px 0; line-height:1;">1,240</div>
+              <div style="font-size:13px; opacity:.92;">شخصاً في قرية ماروميو</div>
+              <div style="display:flex; gap:9px; margin-top:16px;">
+                <div style="flex:1; background:#ffffff24; border-radius:12px; padding:11px;"><div style="font-size:16px; font-weight:900;">42م</div><div style="font-size:10px; opacity:.9;">عمق البئر</div></div>
+                <div style="flex:1; background:#ffffff24; border-radius:12px; padding:11px;"><div style="font-size:16px; font-weight:900;">نقيّة</div><div style="font-size:10px; opacity:.9;">جودة المياه</div></div>
+                <div style="flex:1; background:#ffffff24; border-radius:12px; padding:11px;"><div style="font-size:16px; font-weight:900;">100%</div><div style="font-size:10px; opacity:.9;">مكتمل</div></div>
+              </div>
+            </div>
+
+            <!-- certificate -->
+            <div style="margin-top:14px; background:#fff; border:1px solid #E4E9E5; border-radius:18px; padding:18px 16px; text-align:center; position:relative; box-shadow:0 12px 28px -18px rgba(14,52,73,.3);">
+              <div style="position:absolute; inset:7px; border:1.5px solid #E8E2CF; border-radius:13px; pointer-events:none;"></div>
+              <img src="9a715b55-f34f-4360-8d3b-fa1e8a1ed446" style="width:48px; height:48px; object-fit:contain; margin:0 auto;">
+              <div style="font-family:ui-monospace,monospace; font-size:9px; letter-spacing:2px; color:#9aa89c; margin-top:6px;">CERTIFICATE OF COMPLETION</div>
+              <div style="font-size:15px; font-weight:900; color:#0E3449; margin-top:7px;">شهادة إتمام مشروع</div>
+              <div style="width:38px; height:2px; background:#7CB342; margin:9px auto;"></div>
+              <div style="font-size:11px; color:#7d8c84;">تشهد الجمعية الإفريقية للتعليم والتنمية بأن</div>
+              <div style="font-size:17px; font-weight:900; color:#2E7D43; margin:5px 0;">عبدالله العتيبي</div>
+              <div style="font-size:11px; color:#7d8c84; line-height:1.7;">قد أسهم في إتمام مشروع <b style="color:#0E3449;">بئر مياه — زامبيزيا</b><br>بتاريخ 10 يونيو 2026</div>
+              <div style="display:flex; align-items:center; justify-content:center; gap:18px; margin-top:14px;">
+                <div style="text-align:center;"><img src="7956ab7d-376a-4e35-b6af-8eea36edc3af" style="width:54px; height:54px; object-fit:contain;"><div style="font-size:9px; color:#9aa89c; margin-top:2px;">ختم معتمد</div></div>
+                <div style="text-align:center;"><div style="font-family:'Tajawal'; font-size:18px; color:#0E3449; transform:rotate(-4deg); font-weight:800;">توقيع</div><div style="width:54px; height:1px; background:#C5CFC7; margin:2px auto 0;"></div><div style="font-size:9px; color:#9aa89c; margin-top:2px;">المدير التنفيذي</div></div>
+              </div>
+              <div style="font-family:ui-monospace,monospace; font-size:8px; color:#b6bcb2; margin-top:12px;">رقم التوثيق · AAFED-MZ-W-0291 · قابل للتحقق</div>
+            </div>
+
+            <!-- actions -->
+            <div style="display:flex; gap:9px; margin-top:14px;">
+              <button style="flex:1; background:#0E3449; color:#fff; border:none; border-radius:13px; padding:13px; font-weight:800; font-size:14px; font-family:inherit; cursor:pointer;">مشاركة الأثر</button>
+              <button style="flex:1; background:#fff; color:#0E3449; border:1.5px solid #D7DED8; border-radius:13px; padding:13px; font-weight:800; font-size:14px; font-family:inherit; cursor:pointer;">تحميل PDF</button>
+            </div>
+
+            <!-- continuity -->
+            <div style="margin-top:14px; background:#0E34490a; border:1px solid #0E344918; border-radius:14px; padding:14px;">
+              <div style="font-size:12px; font-weight:800; color:#0E3449; margin-bottom:9px;">المتابعة لا تنتهي بالاكتمال</div>
+              <div style="display:flex; gap:9px;">
+                <div style="flex:1; background:#fff; border:1px solid #E4E9E5; border-radius:11px; padding:11px; text-align:center;"><div style="font-size:12px; font-weight:800; color:#2E7D43;">متابعة الصيانة</div><div style="font-size:10px; color:#7d8c84; margin-top:3px;">تشغيل مستمر</div></div>
+                <div style="flex:1; background:#fff; border:1px solid #E4E9E5; border-radius:11px; padding:11px; text-align:center;"><div style="font-size:12px; font-weight:800; color:#2E7D43;">مشروع جديد</div><div style="font-size:10px; color:#7d8c84; margin-top:3px;">موسم الأضاحي</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="flex:none; height:22px; background:#fff; border-top:1px solid #EBEFEB;"></div>
+        </div>
+<div class="frame" id="s7" data-i="7">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+
+          <div style="background:#0E3449; flex:none;">
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:14px 22px 8px; font-size:13px; font-weight:800; color:#fff;">
+              <span>9:41</span>
+              <div style="display:flex; align-items:center; gap:7px;"><span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:8px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:11px;background:#fff;border-radius:1px;"></i></span><span style="font-family:ui-monospace,monospace;font-size:11px;">5G</span><span style="width:22px;height:11px;border:1.5px solid #fff;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#fff;border-radius:1px;"></span></span></div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:2px 16px 12px; color:#fff;">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span style="width:32px;height:32px;border-radius:9px;border:1.5px solid #ffffff3a;display:flex;align-items:center;justify-content:center;font-size:16px;">→</span>
+                <div><div style="font-size:15px; font-weight:800;">مسجد النور — نامبولا</div><div style="font-size:11px; color:#9ec3ab;">مكتمل · قيد التشغيل</div></div>
+              </div>
+              <span style="width:32px;height:32px;border-radius:9px;border:1.5px solid #ffffff3a;display:flex;align-items:center;justify-content:center;font-size:13px;">⤴</span>
+            </div>
+          </div>
+
+          <div class="scr" style="flex:1; overflow-y:auto;">
+            <div style="position:relative; height:130px; background:#16475c; background-image:repeating-linear-gradient(135deg,#ffffff14 0 11px,#0000 11px 22px); display:flex; align-items:center; justify-content:center;">
+              <span style="font-family:ui-monospace,monospace; font-size:10px; color:#7fa6b5;"><img src="assets/logo.png" alt="صورة المسجد" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span>
+            </div>
+
+            <!-- segment -->
+            <div style="display:flex; gap:6px; margin:13px 14px 4px; background:#E7ECE7; border-radius:13px; padding:4px;">
+              <div style="flex:1; text-align:center; background:#fff; border-radius:10px; padding:8px 0; font-size:12px; font-weight:800; color:#0E3449; box-shadow:0 1px 3px rgba(0,0,0,.08);">الإمام</div>
+              <div style="flex:1; text-align:center; padding:8px 0; font-size:12px; font-weight:700; color:#7d8c84;">الصلوات</div>
+              <div style="flex:1; text-align:center; padding:8px 0; font-size:12px; font-weight:700; color:#7d8c84;">الأنشطة</div>
+              <div style="flex:1; text-align:center; padding:8px 0; font-size:12px; font-weight:700; color:#7d8c84;">المستفيدون</div>
+            </div>
+
+            <div style="padding:13px 14px 18px;">
+              <!-- imam card -->
+              <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:14px;">
+                <div style="display:flex; align-items:center; gap:12px;">
+                  <div style="width:54px;height:54px;flex:none;border-radius:14px;background:#DDE5DE;display:flex;align-items:center;justify-content:center;"><span style="font-family:ui-monospace,monospace;font-size:8px;color:#9aa89c;"><img src="assets/logo.png" alt="صورة" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span></div>
+                  <div style="flex:1;">
+                    <div style="font-size:14px; font-weight:800; color:#0E3449;">الشيخ يوسف عبدالرحمن</div>
+                    <div style="font-size:11px; color:#7d8c84; margin-top:2px;">إمام وخطيب المسجد · مكفول</div>
+                    <span style="display:inline-flex; align-items:center; gap:4px; margin-top:6px; background:#2E7D431a; color:#2E7D43; font-size:10px; font-weight:800; padding:3px 8px; border-radius:7px;">✓ كفالة نشطة · 300 ر.س/شهر</span>
+                  </div>
+                  <button style="background:#0E3449; color:#fff; border:none; border-radius:11px; padding:9px 14px; font-size:12px; font-weight:800; font-family:inherit; cursor:pointer;">متابعة</button>
+                </div>
+                <div style="display:flex; gap:9px; margin-top:13px; padding-top:13px; border-top:1px solid #F0F3F0; align-items:flex-start;">
+                  <span style="width:30px;height:30px;flex:none;border-radius:9px;background:#7CB3421f;display:flex;align-items:center;justify-content:center;font-size:14px;">🎙️</span>
+                  <div style="font-size:11px; color:#46554f; line-height:1.6;"><b style="color:#0E3449;">آخر تحديث من الإمام:</b> «أمّمت صلاة الجمعة بحضور 320 مصلٍّ، وبدأنا حلقة تجويد جديدة للأطفال.» · قبل يومين</div>
+                </div>
+              </div>
+
+              <!-- prayers tracking -->
+              <div style="display:flex; align-items:center; justify-content:space-between; margin:18px 4px 11px;">
+                <span style="font-size:14px; font-weight:800; color:#0E3449;">متابعة الصلوات</span>
+                <span style="font-size:11px; color:#7d8c84;">متوسط الأسبوع</span>
+              </div>
+              <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:15px;">
+                <div style="display:flex; align-items:flex-end; gap:8px; height:92px;">
+                  <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px;"><div style="width:100%; max-width:20px; height:38px; background:#0E3449; border-radius:5px;"></div><span style="font-size:10px; color:#7d8c84;">الفجر</span></div>
+                  <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px;"><div style="width:100%; max-width:20px; height:52px; background:#0E3449; border-radius:5px;"></div><span style="font-size:10px; color:#7d8c84;">الظهر</span></div>
+                  <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px;"><div style="width:100%; max-width:20px; height:48px; background:#0E3449; border-radius:5px;"></div><span style="font-size:10px; color:#7d8c84;">العصر</span></div>
+                  <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px;"><div style="width:100%; max-width:20px; height:60px; background:#0E3449; border-radius:5px;"></div><span style="font-size:10px; color:#7d8c84;">المغرب</span></div>
+                  <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px;"><div style="width:100%; max-width:20px; height:55px; background:#0E3449; border-radius:5px;"></div><span style="font-size:10px; color:#7d8c84;">العشاء</span></div>
+                  <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px;"><div style="width:100%; max-width:20px; height:84px; background:#7CB342; border-radius:5px;"></div><span style="font-size:10px; color:#2E7D43; font-weight:800;">الجمعة</span></div>
+                </div>
+                <div style="display:flex; justify-content:space-between; margin-top:13px; padding-top:12px; border-top:1px solid #F0F3F0;">
+                  <div><div style="font-size:16px; font-weight:900; color:#0E3449;">320</div><div style="font-size:10px; color:#7d8c84;">متوسط الجمعة</div></div>
+                  <div><div style="font-size:16px; font-weight:900; color:#0E3449;">~110</div><div style="font-size:10px; color:#7d8c84;">الفرض اليومي</div></div>
+                  <div><div style="font-size:16px; font-weight:900; color:#2E7D43;">▲ 14%</div><div style="font-size:10px; color:#7d8c84;">عن الشهر الماضي</div></div>
+                </div>
+              </div>
+
+              <!-- activities -->
+              <div style="font-size:14px; font-weight:800; color:#0E3449; margin:18px 4px 11px;">أنشطة المسجد</div>
+              <div style="display:flex; flex-direction:column; gap:9px;">
+                <div style="background:#fff; border:1px solid #EBEFEB; border-radius:14px; padding:13px; display:flex; align-items:center; gap:11px;">
+                  <span style="width:38px;height:38px;flex:none;border-radius:11px;background:#2E7D431a;display:flex;align-items:center;justify-content:center;font-size:16px;">📖</span>
+                  <div style="flex:1;"><div style="font-size:13px; font-weight:800; color:#0E3449;">حلقات تحفيظ القرآن</div><div style="font-size:11px; color:#7d8c84; margin-top:2px;">3 حلقات · معلّمان</div></div>
+                  <div style="text-align:left;"><div style="font-size:17px; font-weight:900; color:#2E7D43;">45</div><div style="font-size:10px; color:#7d8c84;">طالباً</div></div>
+                </div>
+                <div style="background:#fff; border:1px solid #EBEFEB; border-radius:14px; padding:13px; display:flex; align-items:center; gap:11px;">
+                  <span style="width:38px;height:38px;flex:none;border-radius:11px;background:#0E34491a;display:flex;align-items:center;justify-content:center;font-size:16px;">🗣️</span>
+                  <div style="flex:1;"><div style="font-size:13px; font-weight:800; color:#0E3449;">الدروس الأسبوعية</div><div style="font-size:11px; color:#7d8c84; margin-top:2px;">فقه · سيرة · تجويد</div></div>
+                  <div style="text-align:left;"><div style="font-size:17px; font-weight:900; color:#2E7D43;">4</div><div style="font-size:10px; color:#7d8c84;">دروس/أسبوع</div></div>
+                </div>
+                <div style="background:#fff; border:1px solid #EBEFEB; border-radius:14px; padding:13px; display:flex; align-items:center; gap:11px;">
+                  <span style="width:38px;height:38px;flex:none;border-radius:11px;background:#7CB3421f;display:flex;align-items:center;justify-content:center;font-size:16px;">🤝</span>
+                  <div style="flex:1;"><div style="font-size:13px; font-weight:800; color:#0E3449;">برنامج محو الأمية</div><div style="font-size:11px; color:#7d8c84; margin-top:2px;">للكبار · مرتين أسبوعياً</div></div>
+                  <div style="text-align:left;"><div style="font-size:17px; font-weight:900; color:#2E7D43;">28</div><div style="font-size:10px; color:#7d8c84;">دارساً</div></div>
+                </div>
+              </div>
+
+              <!-- beneficiaries -->
+              <div style="margin-top:16px; background:linear-gradient(135deg,#0E3449,#2E7D43); border-radius:16px; padding:16px; color:#fff;">
+                <div style="font-size:12px; opacity:.85; margin-bottom:12px;">إجمالي المستفيدين من المسجد شهرياً</div>
+                <div style="display:flex; align-items:center; justify-content:space-between;">
+                  <div style="text-align:center;"><div style="font-size:20px; font-weight:900;">1,380</div><div style="font-size:10px; opacity:.8;">مصلٍّ</div></div>
+                  <div style="width:1px; height:30px; background:#ffffff2e;"></div>
+                  <div style="text-align:center;"><div style="font-size:20px; font-weight:900;">73</div><div style="font-size:10px; opacity:.8;">طالب/دارس</div></div>
+                  <div style="width:1px; height:30px; background:#ffffff2e;"></div>
+                  <div style="text-align:center;"><div style="font-size:20px; font-weight:900;">12</div><div style="font-size:10px; opacity:.8;">حافظ جديد</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="flex:none; padding:11px 16px 22px; background:#fff; border-top:1px solid #EBEFEB; display:flex; gap:9px;">
+            <button style="flex:1; background:#0E3449; color:#fff; border:none; border-radius:13px; padding:14px; font-weight:800; font-size:15px; font-family:inherit; cursor:pointer;">اكفل إمام المسجد</button>
+            <button style="background:#F4F7F4; border:none; border-radius:13px; padding:0 16px; font-size:18px; cursor:pointer;">💬</button>
+          </div>
+        </div>
+<div class="frame" id="s8" data-i="8">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+
+          <div style="flex:none; padding:14px 16px 13px; background:#fff; border-bottom:1px solid #EBEFEB;">
+            <div style="display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:800; color:#0E3449; margin-bottom:12px;">
+              <span>9:41</span>
+              <div style="display:flex; align-items:center; gap:7px;"><span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#0E3449;border-radius:1px;"></i><i style="width:3px;height:8px;background:#0E3449;border-radius:1px;"></i><i style="width:3px;height:11px;background:#0E3449;border-radius:1px;"></i></span><span style="font-family:ui-monospace,monospace;font-size:11px;">5G</span><span style="width:22px;height:11px;border:1.5px solid #0E3449;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#0E3449;border-radius:1px;"></span></span></div>
+            </div>
+            <div style="font-size:17px; font-weight:900; color:#0E3449;">حكايات تستحق الكفالة</div>
+            <div style="font-size:11px; color:#7d8c84; margin-top:2px;">قابِل الحالة بنفسك قبل أن تقرّر — كل قصة موثّقة ميدانياً</div>
+          </div>
+
+          <div class="scr" style="display:flex; gap:7px; overflow-x:auto; padding:12px 16px 11px; flex:none;">
+            <span style="flex:none; background:#0E3449; color:#fff; font-size:12px; font-weight:800; padding:7px 14px; border-radius:20px;">الكل</span>
+            <span style="flex:none; background:#fff; border:1px solid #E4E9E5; color:#5e6e6a; font-size:12px; font-weight:700; padding:7px 14px; border-radius:20px;">طلبة علم</span>
+            <span style="flex:none; background:#fff; border:1px solid #E4E9E5; color:#5e6e6a; font-size:12px; font-weight:700; padding:7px 14px; border-radius:20px;">كفالة دعاة</span>
+            <span style="flex:none; background:#fff; border:1px solid #E4E9E5; color:#5e6e6a; font-size:12px; font-weight:700; padding:7px 14px; border-radius:20px;">أسر معيلة</span>
+          </div>
+
+          <div class="scr" style="flex:1; overflow-y:auto; padding:2px 14px 18px;">
+            <!-- case 1 -->
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:18px; overflow:hidden; margin-bottom:13px;">
+              <div style="position:relative; height:150px; background:#16475c; background-image:repeating-linear-gradient(135deg,#ffffff14 0 11px,#0000 11px 22px); display:flex; align-items:center; justify-content:center;">
+                <span style="font-family:ui-monospace,monospace; font-size:10px; color:#7fa6b5;"><img src="assets/logo.png" alt="صورة أمينة" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span>
+                <span style="position:absolute; top:11px; right:11px; background:#7CB342; color:#0E3449; font-size:10px; font-weight:900; padding:4px 9px; border-radius:7px;">طالبة علم</span>
+                <span style="position:absolute; top:11px; left:11px; background:#ffffffe6; color:#2E7D43; font-size:10px; font-weight:800; padding:4px 8px; border-radius:7px;">✓ موثّقة</span>
+              </div>
+              <div style="padding:14px;">
+                <div style="font-size:15px; font-weight:900; color:#0E3449;">أمينة · 14 سنة · مابوتو</div>
+                <div style="font-size:12px; color:#46554f; line-height:1.7; margin:7px 0 11px;">«تمشي 6 كيلومترات كل صباح حتى المدرسة. الأولى على صفّها، وتحلم أن تصبح طبيبة لقريتها — لكن رسوم هذا العام تكاد توقف الحلم.»</div>
+                <div style="display:flex; align-items:center; justify-content:space-between; background:#F4F7F4; border-radius:11px; padding:9px 11px; margin-bottom:11px;">
+                  <span style="font-size:11px; color:#5e6e6a;">تحتاج: رسوم + كتب لعام دراسي</span>
+                  <span style="font-size:13px; font-weight:900; color:#0E3449;">1,800 ر.س</span>
+                </div>
+                <div style="display:flex; gap:9px;">
+                  <button style="flex:1; background:#0E3449; color:#fff; border:none; border-radius:12px; padding:11px; font-weight:800; font-size:13px; font-family:inherit; cursor:pointer;">اطلب مقابلة</button>
+                  <button style="flex:1; background:#fff; color:#0E3449; border:1.5px solid #D7DED8; border-radius:12px; padding:11px; font-weight:800; font-size:13px; font-family:inherit; cursor:pointer;">اقرأ الحدوتة</button>
+                </div>
+              </div>
+            </div>
+            <!-- case 2 -->
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:18px; overflow:hidden; margin-bottom:13px;">
+              <div style="position:relative; height:150px; background:#1f5a3a; background-image:repeating-linear-gradient(135deg,#ffffff14 0 11px,#0000 11px 22px); display:flex; align-items:center; justify-content:center;">
+                <span style="font-family:ui-monospace,monospace; font-size:10px; color:#9ec3ab;"><img src="assets/logo.png" alt="صورة عائلة روزا" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span>
+                <span style="position:absolute; top:11px; right:11px; background:#fff; color:#2E7D43; font-size:10px; font-weight:900; padding:4px 9px; border-radius:7px;">أسرة معيلة</span>
+                <span style="position:absolute; top:11px; left:11px; background:#ffffffe6; color:#2E7D43; font-size:10px; font-weight:800; padding:4px 8px; border-radius:7px;">✓ موثّقة</span>
+              </div>
+              <div style="padding:14px;">
+                <div style="font-size:15px; font-weight:900; color:#0E3449;">روزا · أرملة تعيل 3 أطفال · بيرا</div>
+                <div style="font-size:12px; color:#46554f; line-height:1.7; margin:7px 0 11px;">«تتقن الخياطة لكنها تملك إبرة وخيطاً فقط. ماكينة واحدة تكفي لتحويل مهارتها إلى مشروع يطعم أطفالها كل يوم.»</div>
+                <div style="display:flex; align-items:center; justify-content:space-between; background:#F4F7F4; border-radius:11px; padding:9px 11px; margin-bottom:11px;">
+                  <span style="font-size:11px; color:#5e6e6a;">تحتاج: رأس مال مشروع خياطة</span>
+                  <span style="font-size:13px; font-weight:900; color:#0E3449;">3,200 ر.س</span>
+                </div>
+                <div style="display:flex; gap:9px;">
+                  <button style="flex:1; background:#0E3449; color:#fff; border:none; border-radius:12px; padding:11px; font-weight:800; font-size:13px; font-family:inherit; cursor:pointer;">اطلب مقابلة</button>
+                  <button style="flex:1; background:#fff; color:#0E3449; border:1.5px solid #D7DED8; border-radius:12px; padding:11px; font-weight:800; font-size:13px; font-family:inherit; cursor:pointer;">اقرأ الحدوتة</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<div class="frame" id="s9" data-i="9">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+
+          <div class="scr" style="flex:1; overflow-y:auto;">
+            <!-- big portrait header -->
+            <div style="position:relative; height:300px; background:#16475c; background-image:repeating-linear-gradient(135deg,#ffffff12 0 12px,#0000 12px 24px);">
+              <div style="display:flex; align-items:center; justify-content:space-between; padding:14px 18px 0; color:#fff;">
+                <span style="width:34px;height:34px;border-radius:10px;background:#0e3449aa;backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;font-size:16px;">→</span>
+                <span style="width:34px;height:34px;border-radius:10px;background:#0e3449aa;display:flex;align-items:center;justify-content:center;font-size:13px;">♡</span>
+              </div>
+              <span style="position:absolute; top:48%; left:50%; transform:translate(-50%,-50%); font-family:ui-monospace,monospace; font-size:11px; color:#7fa6b5;"><img src="assets/logo.png" alt="صورة أمينة" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span>
+              <div style="position:absolute; inset:auto 0 0 0; padding:42px 18px 16px; background:linear-gradient(to top, rgba(14,52,73,.96), rgba(14,52,73,0));">
+                <span style="display:inline-flex; align-items:center; gap:4px; background:#7CB342; color:#0E3449; font-size:10px; font-weight:900; padding:4px 9px; border-radius:7px;">✓ حالة موثّقة ميدانياً</span>
+                <div style="color:#fff; font-size:21px; font-weight:900; margin-top:9px;">أمينة جواو</div>
+                <div style="color:#bcd5c6; font-size:12px; margin-top:2px;">14 سنة · مابوتو، موزمبيق · طالبة في الصف التاسع</div>
+              </div>
+            </div>
+
+            <!-- story narrative -->
+            <div style="padding:18px 18px 8px;">
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                <span style="width:22px; height:2px; background:#7CB342;"></span>
+                <span style="font-family:ui-monospace,monospace; font-size:10px; letter-spacing:1.5px; color:#2E7D43; font-weight:700;">الحدوتة</span>
+              </div>
+              <div style="font-size:15px; font-weight:900; color:#0E3449; line-height:1.5; margin-bottom:10px;">«قالوا لي إن البنت لا تكمل تعليمها هنا… قرّرت أن أكون الاستثناء.»</div>
+              <p style="font-size:13px; color:#46554f; line-height:2; margin:0 0 14px;">في قرية على أطراف مابوتو، تستيقظ أمينة قبل الفجر لتقطع ستة كيلومترات سيراً إلى أقرب مدرسة. والدها مزارع بسيط، ودخل الأسرة بالكاد يكفي الطعام.</p>
+              <p style="font-size:13px; color:#46554f; line-height:2; margin:0 0 14px;">رغم كل ذلك، هي الأولى على صفّها ثلاث سنوات متتالية. معلّمتها تقول إنها «الأذكى التي مرّت عليها». لكن رسوم العام القادم وكتبه تقف اليوم بين أمينة وحلمها أن تصبح طبيبة تعود لتخدم قريتها.</p>
+              <div style="background:#F4F7F4; border-right:3px solid #7CB342; border-radius:10px; padding:12px 14px; margin-bottom:6px;">
+                <div style="font-size:13px; color:#0E3449; font-weight:700; line-height:1.8;">«لا أريد هدية. أريد فقط أن أكمل، ويوماً ما أردّ الجميل لقريتي.» — أمينة</div>
+              </div>
+            </div>
+
+            <!-- needs breakdown -->
+            <div style="padding:10px 18px 8px;">
+              <div style="font-size:14px; font-weight:800; color:#0E3449; margin-bottom:11px;">ما الذي تحتاجه أمينة؟</div>
+              <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:6px 14px;">
+                <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid #F0F3F0;"><span style="font-size:12px; color:#46554f;">الرسوم الدراسية لعام كامل</span><span style="font-size:13px; font-weight:800; color:#0E3449;">1,100 ر.س</span></div>
+                <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid #F0F3F0;"><span style="font-size:12px; color:#46554f;">الكتب والقرطاسية</span><span style="font-size:13px; font-weight:800; color:#0E3449;">420 ر.س</span></div>
+                <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid #F0F3F0;"><span style="font-size:12px; color:#46554f;">الزي ووسيلة المواصلات</span><span style="font-size:13px; font-weight:800; color:#0E3449;">280 ر.س</span></div>
+                <div style="display:flex; align-items:center; justify-content:space-between; padding:13px 0;"><span style="font-size:13px; color:#0E3449; font-weight:900;">الإجمالي السنوي</span><span style="font-size:16px; font-weight:900; color:#2E7D43;">1,800 ر.س</span></div>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px; margin-top:11px; background:#0E34490a; border-radius:11px; padding:10px 12px;">
+                <span style="width:26px;height:26px;flex:none;border-radius:8px;background:#2E7D43;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;">✓</span>
+                <span style="font-size:11px; color:#3f5751; line-height:1.5;">تحقّق فريق الجمعية ميدانياً من الحالة والوثائق الدراسية.</span>
+              </div>
+            </div>
+            <div style="height:90px;"></div>
+          </div>
+
+          <!-- sticky -->
+          <div style="flex:none; padding:11px 16px 22px; background:#fff; border-top:1px solid #EBEFEB; display:flex; gap:9px;">
+            <button style="flex:1; background:#fff; color:#0E3449; border:1.5px solid #0E3449; border-radius:13px; padding:13px; font-weight:800; font-size:14px; font-family:inherit; cursor:pointer;">🎥 اطلب مقابلة</button>
+            <button style="flex:1; background:#0E3449; color:#fff; border:none; border-radius:13px; padding:13px; font-weight:800; font-size:14px; font-family:inherit; cursor:pointer;">اكفل أمينة</button>
+          </div>
+        </div>
+<div class="frame" id="s10" data-i="10">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+
+          <div style="flex:none; padding:14px 16px 13px; background:#fff; border-bottom:1px solid #EBEFEB;">
+            <div style="display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:800; color:#0E3449; margin-bottom:12px;">
+              <span>9:41</span>
+              <div style="display:flex; align-items:center; gap:7px;"><span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#0E3449;border-radius:1px;"></i><i style="width:3px;height:8px;background:#0E3449;border-radius:1px;"></i><i style="width:3px;height:11px;background:#0E3449;border-radius:1px;"></i></span><span style="font-family:ui-monospace,monospace;font-size:11px;">5G</span><span style="width:22px;height:11px;border:1.5px solid #0E3449;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#0E3449;border-radius:1px;"></span></span></div>
+            </div>
+            <div style="font-size:17px; font-weight:900; color:#0E3449;">مقابلاتي وكفالاتي</div>
+          </div>
+
+          <div style="display:flex; gap:6px; margin:13px 14px 4px; background:#E7ECE7; border-radius:13px; padding:4px;">
+            <div style="flex:1; text-align:center; background:#fff; border-radius:10px; padding:9px 0; font-size:12px; font-weight:800; color:#0E3449; box-shadow:0 1px 3px rgba(0,0,0,.08);">المقابلات</div>
+            <div style="flex:1; text-align:center; padding:9px 0; font-size:12px; font-weight:700; color:#7d8c84;">من كفلتهم</div>
+          </div>
+
+          <div class="scr" style="flex:1; overflow-y:auto; padding:12px 14px 18px;">
+            <div style="font-size:12px; color:#7d8c84; margin:0 4px 11px; line-height:1.6;">رتّب مقابلة فيديو قصيرة مع الحالة — بإشراف الجمعية ووساطتها — قبل أن تقرّر الكفالة.</div>
+
+            <!-- interview scheduled -->
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:13px; margin-bottom:11px;">
+              <div style="display:flex; align-items:center; gap:11px;">
+                <div style="position:relative; width:48px;height:48px;flex:none;border-radius:13px;background:#16475c;background-image:repeating-linear-gradient(135deg,#ffffff14 0 6px,#0000 6px 12px);"></div>
+                <div style="flex:1;">
+                  <div style="font-size:13px; font-weight:800; color:#0E3449;">أمينة · 14 سنة</div>
+                  <div style="font-size:11px; color:#7d8c84; margin-top:2px;">طالبة علم · مابوتو</div>
+                </div>
+                <span style="background:#2E7D431a; color:#2E7D43; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">مجدولة</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:9px; margin-top:12px; padding-top:12px; border-top:1px solid #F0F3F0;">
+                <span style="display:flex; align-items:center; gap:5px; font-size:11px; color:#46554f; font-weight:700;">🎥 الخميس · 8:00 م</span>
+                <span style="font-size:11px; color:#9aa89c;">· بترجمة فورية</span>
+                <button style="margin-right:auto; background:#0E3449; color:#fff; border:none; border-radius:10px; padding:8px 16px; font-size:12px; font-weight:800; font-family:inherit; cursor:pointer;">انضمام</button>
+              </div>
+            </div>
+
+            <!-- interview pending -->
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:13px; margin-bottom:18px;">
+              <div style="display:flex; align-items:center; gap:11px;">
+                <div style="width:48px;height:48px;flex:none;border-radius:13px;background:#1f5a3a;background-image:repeating-linear-gradient(135deg,#ffffff14 0 6px,#0000 6px 12px);"></div>
+                <div style="flex:1;">
+                  <div style="font-size:13px; font-weight:800; color:#0E3449;">روزا · أسرة معيلة</div>
+                  <div style="font-size:11px; color:#7d8c84; margin-top:2px;">مشروع خياطة · بيرا</div>
+                </div>
+                <span style="background:#C9992f1f; color:#9a7720; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">بانتظار الموافقة</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:7px; margin-top:12px; padding-top:12px; border-top:1px solid #F0F3F0; font-size:11px; color:#7d8c84;">
+                <span style="width:7px;height:7px;border-radius:50%;background:#C9992f;"></span>الجمعية تنسّق موعداً مناسباً مع الأسرة وتحميها.
+              </div>
+            </div>
+
+            <!-- adopted + follow-up chat -->
+            <div style="font-size:13px; font-weight:800; color:#0E3449; margin:0 4px 11px;">من كفلتهم — تابِع وتواصل</div>
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; overflow:hidden;">
+              <div style="padding:13px; display:flex; align-items:center; gap:11px; border-bottom:1px solid #F0F3F0;">
+                <div style="width:46px;height:46px;flex:none;border-radius:50%;background:#16475c;background-image:repeating-linear-gradient(135deg,#ffffff14 0 6px,#0000 6px 12px);"></div>
+                <div style="flex:1;">
+                  <div style="display:flex; align-items:center; gap:6px;"><span style="font-size:13px; font-weight:800; color:#0E3449;">كارلوس · طالب طب</span><span style="background:#2E7D431a; color:#2E7D43; font-size:9px; font-weight:800; padding:2px 7px; border-radius:6px;">مكفول</span></div>
+                  <div style="font-size:11px; color:#7d8c84; margin-top:2px;">التقرير القادم: فصلي · سبتمبر</div>
+                </div>
+              </div>
+              <!-- chat preview -->
+              <div style="padding:13px; background:#F7F9F7;">
+                <div style="display:flex; gap:8px; margin-bottom:9px;">
+                  <div style="width:26px;height:26px;flex:none;border-radius:50%;background:#DDE5DE;"></div>
+                  <div style="background:#fff; border:1px solid #EBEFEB; border-radius:13px; border-top-right-radius:4px; padding:9px 11px; font-size:12px; color:#46554f; line-height:1.6; max-width:78%;">شكراً لكفالتك. نجحت في امتحان التشريح هذا الفصل بفضل الله ثم بفضلك 🌱</div>
+                </div>
+                <div style="display:flex; gap:8px; justify-content:flex-start; flex-direction:row-reverse;">
+                  <div style="background:#0E3449; border-radius:13px; border-top-left-radius:4px; padding:9px 11px; font-size:12px; color:#fff; line-height:1.6; max-width:78%;">فخور بك يا كارلوس، استمر! 💪</div>
+                </div>
+                <div style="display:flex; align-items:center; gap:7px; margin-top:11px;">
+                  <span style="width:7px;height:7px;border-radius:50%;background:#7CB342;"></span>
+                  <span style="font-size:10px; color:#9aa89c;">قناة موثّقة بإشراف الجمعية — لحماية الطرفين وخصوصيتهما</span>
+                </div>
+                <div style="display:flex; gap:8px; margin-top:11px;">
+                  <div style="flex:1; background:#fff; border:1px solid #E4E9E5; border-radius:11px; padding:10px 13px; font-size:12px; color:#9aa89c;">اكتب رسالة…</div>
+                  <button style="background:#0E3449; color:#fff; border:none; border-radius:11px; padding:0 16px; font-size:15px; cursor:pointer;">➤</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<div class="frame" id="s11" data-i="11">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+
+          <div style="background:#0E3449; flex:none; padding:14px 18px 16px; color:#fff;">
+            <div style="display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:800; margin-bottom:13px;">
+              <span>9:41</span>
+              <div style="display:flex; align-items:center; gap:7px;"><span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:8px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:11px;background:#fff;border-radius:1px;"></i></span><span style="font-family:ui-monospace,monospace;font-size:11px;">5G</span><span style="width:22px;height:11px;border:1.5px solid #fff;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#fff;border-radius:1px;"></span></span></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:9px;">
+              <span style="width:30px;height:30px;border-radius:9px;border:1.5px solid #ffffff3a;display:flex;align-items:center;justify-content:center;font-size:15px;">→</span>
+              <div><div style="font-size:17px; font-weight:900;">شير في الخير</div><div style="font-size:11px; color:#9ec3ab;">أجرٌ جماعي · كلكم شركاء فيه</div></div>
+            </div>
+          </div>
+
+          <div class="scr" style="flex:1; overflow-y:auto; padding:14px 14px 18px;">
+            <!-- featured shared project -->
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:18px; overflow:hidden; box-shadow:0 12px 28px -18px rgba(14,52,73,.28);">
+              <div style="position:relative; height:140px; background:#16475c; background-image:repeating-linear-gradient(135deg,#ffffff14 0 11px,#0000 11px 22px); display:flex; align-items:center; justify-content:center;">
+                <span style="font-family:ui-monospace,monospace; font-size:10px; color:#7fa6b5;"><img src="assets/logo.png" alt="صورة البئر الجماعي" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span>
+                <span style="position:absolute; top:12px; right:12px; background:#7CB342; color:#0E3449; font-size:10px; font-weight:900; padding:4px 9px; border-radius:7px;">مشروع تشاركي</span>
+              </div>
+              <div style="padding:15px;">
+                <div style="font-size:16px; font-weight:900; color:#0E3449;">بئر الخير الجماعي — زامبيزيا</div>
+                <div style="font-size:11px; color:#7d8c84; margin:4px 0 13px;">إجمالي التكلفة 50,000 ر.س · مقسومة إلى 100 سهم</div>
+
+                <!-- shares grid -->
+                <div style="display:grid; grid-template-columns:repeat(10,1fr); gap:4px;">
+                  <span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span>
+                  <span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span>
+                  <span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span>
+                  <span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#7CB342;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span>
+                  <span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span>
+                  <span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#9ec98f;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span>
+                  <span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span>
+                  <span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span>
+                  <span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span>
+                  <span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span><span style="aspect-ratio:1;border-radius:3px;background:#E2E8E2;"></span>
+                </div>
+
+                <div style="display:flex; align-items:center; justify-content:space-between; margin-top:13px;">
+                  <div style="display:flex; align-items:center; gap:13px;">
+                    <span style="display:flex; align-items:center; gap:5px; font-size:11px; color:#5e6e6a;"><i style="width:10px;height:10px;border-radius:3px;background:#7CB342;"></i>مُباع</span>
+                    <span style="display:flex; align-items:center; gap:5px; font-size:11px; color:#5e6e6a;"><i style="width:10px;height:10px;border-radius:3px;background:#9ec98f;"></i>محجوز</span>
+                    <span style="display:flex; align-items:center; gap:5px; font-size:11px; color:#5e6e6a;"><i style="width:10px;height:10px;border-radius:3px;background:#E2E8E2;"></i>متاح</span>
+                  </div>
+                  <span style="font-size:13px; font-weight:900; color:#2E7D43;">68 / 100</span>
+                </div>
+
+                <!-- contributors wall -->
+                <div style="display:flex; align-items:center; gap:9px; margin-top:14px; padding-top:14px; border-top:1px solid #F0F3F0;">
+                  <div style="display:flex; flex-direction:row-reverse;">
+                    <span style="width:28px;height:28px;border-radius:50%;background:#DDE5DE;border:2px solid #fff;"></span>
+                    <span style="width:28px;height:28px;border-radius:50%;background:#c9d6cb;border:2px solid #fff;margin-right:-9px;"></span>
+                    <span style="width:28px;height:28px;border-radius:50%;background:#b3c4b6;border:2px solid #fff;margin-right:-9px;"></span>
+                    <span style="width:28px;height:28px;border-radius:50%;background:#0E3449;border:2px solid #fff;margin-right:-9px;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;">47+</span>
+                  </div>
+                  <span style="font-size:11px; color:#5e6e6a; line-height:1.5;">47 مشاركاً اشتركوا في هذا البئر — كلكم في ميزان الأجر.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- buy shares picker -->
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:15px; margin-top:13px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+                <span style="font-size:13px; font-weight:800; color:#0E3449;">اختر عدد أسهمك</span>
+                <span style="font-size:12px; color:#7d8c84;">السهم = <b style="color:#0E3449;">500 ر.س</b></span>
+              </div>
+              <div style="display:flex; align-items:center; gap:13px;">
+                <button style="width:42px;height:42px;border-radius:12px;border:1.5px solid #E0E6E0;background:#fff;font-size:20px;font-weight:700;color:#0E3449;cursor:pointer;">−</button>
+                <div style="flex:1; text-align:center;"><div style="font-size:26px; font-weight:900; color:#0E3449;">3</div><div style="font-size:11px; color:#7d8c84;">أسهم = 1,500 ر.س</div></div>
+                <button style="width:42px;height:42px;border-radius:12px;border:none;background:#0E3449;font-size:20px;font-weight:700;color:#fff;cursor:pointer;">+</button>
+              </div>
+              <div style="display:flex; gap:7px; margin-top:13px;">
+                <span style="flex:1; text-align:center; background:#F4F7F4; border-radius:10px; padding:8px 0; font-size:12px; font-weight:800; color:#5e6e6a;">سهم</span>
+                <span style="flex:1; text-align:center; background:#2E7D431a; border:1px solid #2E7D4333; border-radius:10px; padding:8px 0; font-size:12px; font-weight:800; color:#2E7D43;">3 أسهم</span>
+                <span style="flex:1; text-align:center; background:#F4F7F4; border-radius:10px; padding:8px 0; font-size:12px; font-weight:800; color:#5e6e6a;">5</span>
+                <span style="flex:1; text-align:center; background:#F4F7F4; border-radius:10px; padding:8px 0; font-size:12px; font-weight:800; color:#5e6e6a;">10</span>
+              </div>
+            </div>
+
+            <!-- other shared projects -->
+            <div style="font-size:13px; font-weight:800; color:#0E3449; margin:16px 4px 11px;">مشاريع تشاركية أخرى</div>
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:12px; display:flex; gap:11px; align-items:center;">
+              <div style="width:52px;height:52px;flex:none;border-radius:13px;background:#DDE5DE;background-image:repeating-linear-gradient(135deg,#0e344912 0 8px,#0000 8px 16px);display:flex;align-items:center;justify-content:center;"><span style="font-family:ui-monospace,monospace;font-size:8px;color:#9aa89c;">مسجد</span></div>
+              <div style="flex:1;">
+                <div style="display:flex; justify-content:space-between; align-items:center;"><div style="font-size:13px; font-weight:800; color:#0E3449;">مسجد الرحمة — بيرا</div><span style="font-size:11px; font-weight:900; color:#2E7D43;">120/200</span></div>
+                <div style="height:6px; background:#E7ECE7; border-radius:4px; overflow:hidden; margin:8px 0 6px;"><div style="width:60%;height:100%;background:#7CB342;"></div></div>
+                <div style="font-size:10px; color:#7d8c84;">السهم 750 ر.س · 89 مشاركاً</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="flex:none; padding:11px 16px 22px; background:#fff; border-top:1px solid #EBEFEB; display:flex; gap:9px;">
+            <button style="flex:1; background:#0E3449; color:#fff; border:none; border-radius:13px; padding:14px; font-weight:800; font-size:15px; font-family:inherit; cursor:pointer;">احجز 3 أسهم · 1,500 ر.س</button>
+            <button style="background:#F4F7F4; border:none; border-radius:13px; padding:0 16px; font-size:18px; cursor:pointer;">⤴</button>
+          </div>
+        </div>
+<div class="frame" id="s12" data-i="12">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+
+          <div style="background:#0E3449; flex:none; padding:14px 18px 18px; color:#fff;">
+            <div style="display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:800; margin-bottom:14px;">
+              <span>9:41</span>
+              <div style="display:flex; align-items:center; gap:7px;"><span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:8px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:11px;background:#fff;border-radius:1px;"></i></span><span style="font-family:ui-monospace,monospace;font-size:11px;">5G</span><span style="width:22px;height:11px;border:1.5px solid #fff;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#fff;border-radius:1px;"></span></span></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:11px;">
+              <div style="width:46px;height:46px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;"><span style="width:22px;height:22px;border-radius:5px;background:#0E3449;"></span></div>
+              <div style="flex:1;"><div style="font-size:16px; font-weight:900;">مؤسسة النماء</div><div style="font-size:11px; color:#9ec3ab;">حساب مؤسسي · شريك موثّق</div></div>
+              <span style="background:#7CB342; color:#0E3449; font-size:10px; font-weight:900; padding:5px 10px; border-radius:8px;">PRO</span>
+            </div>
+          </div>
+
+          <div class="scr" style="flex:1; overflow-y:auto; padding:14px 14px 18px;">
+            <!-- KPIs -->
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:15px;">
+              <div style="font-size:12px; color:#7d8c84;">إجمالي مساهمات المؤسسة</div>
+              <div style="display:flex; align-items:baseline; gap:6px; margin:5px 0 13px;"><div style="font-size:28px; font-weight:900; color:#0E3449;">1,250,000</div><span style="font-size:13px; color:#2E7D43; font-weight:800;">ر.س</span></div>
+              <div style="display:flex; gap:9px;">
+                <div style="flex:1; background:#F4F7F4; border-radius:12px; padding:11px; text-align:center;"><div style="font-size:17px; font-weight:900; color:#0E3449;">9</div><div style="font-size:10px; color:#7d8c84;">مشاريع ممولة</div></div>
+                <div style="flex:1; background:#F4F7F4; border-radius:12px; padding:11px; text-align:center;"><div style="font-size:17px; font-weight:900; color:#0E3449;">34K</div><div style="font-size:10px; color:#7d8c84;">مستفيد</div></div>
+                <div style="flex:1; background:#F4F7F4; border-radius:12px; padding:11px; text-align:center;"><div style="font-size:17px; font-weight:900; color:#0E3449;">100%</div><div style="font-size:10px; color:#7d8c84;">موثّق</div></div>
+              </div>
+            </div>
+
+            <!-- account manager -->
+            <div style="background:linear-gradient(135deg,#0E3449,#2E7D43); border-radius:16px; padding:14px; margin-top:13px; color:#fff; display:flex; align-items:center; gap:12px;">
+              <div style="width:44px;height:44px;flex:none;border-radius:12px;background:#ffffff1f;display:flex;align-items:center;justify-content:center;font-size:18px;">👤</div>
+              <div style="flex:1;"><div style="font-size:11px; opacity:.85;">مدير حسابك المخصّص</div><div style="font-size:14px; font-weight:800;">أ. منذر العبدالله</div></div>
+              <button style="background:#fff; color:#0E3449; border:none; border-radius:11px; padding:9px 14px; font-size:12px; font-weight:800; font-family:inherit; cursor:pointer;">قناة مباشرة</button>
+            </div>
+
+            <!-- official reports -->
+            <div style="font-size:13px; font-weight:800; color:#0E3449; margin:16px 4px 11px;">تقارير رسمية دورية (بشعارك)</div>
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:14px; padding:13px; display:flex; align-items:center; gap:12px; margin-bottom:9px;">
+              <div style="width:40px;height:48px;flex:none;border-radius:8px;background:#0E34490d;border:1px solid #0E344918;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#0E3449;">PDF</div>
+              <div style="flex:1;"><div style="font-size:13px; font-weight:800; color:#0E3449;">التقرير الربعي Q2 2026</div><div style="font-size:11px; color:#7d8c84; margin-top:2px;">9 مشاريع · شعار المؤسسة · معتمد</div></div>
+              <span style="font-size:18px; color:#2E7D43;">⤓</span>
+            </div>
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:14px; padding:13px; display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+              <div style="width:40px;height:48px;flex:none;border-radius:8px;background:#0E34490d;border:1px solid #0E344918;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#0E3449;">PDF</div>
+              <div style="flex:1;"><div style="font-size:13px; font-weight:800; color:#0E3449;">تقرير الأثر السنوي 2025</div><div style="font-size:11px; color:#7d8c84; margin-top:2px;">تدقيق مفصّل · جاهز للمشاركة</div></div>
+              <span style="font-size:18px; color:#2E7D43;">⤓</span>
+            </div>
+
+            <!-- team -->
+            <div style="font-size:13px; font-weight:800; color:#0E3449; margin:0 4px 11px;">الفريق والصلاحيات</div>
+            <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; overflow:hidden;">
+              <div style="display:flex; align-items:center; gap:11px; padding:12px 13px; border-bottom:1px solid #F0F3F0;">
+                <div style="width:36px;height:36px;border-radius:50%;background:#DDE5DE;"></div>
+                <div style="flex:1;"><div style="font-size:13px; font-weight:800; color:#0E3449;">سلمى الراشد</div><div style="font-size:10px; color:#7d8c84;">المدير المالي</div></div>
+                <span style="background:#0E34491a; color:#0E3449; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">اعتماد الصرف</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:11px; padding:12px 13px; border-bottom:1px solid #F0F3F0;">
+                <div style="width:36px;height:36px;border-radius:50%;background:#DDE5DE;"></div>
+                <div style="flex:1;"><div style="font-size:13px; font-weight:800; color:#0E3449;">طارق يوسف</div><div style="font-size:10px; color:#7d8c84;">منسّق المشاريع</div></div>
+                <span style="background:#2E7D431a; color:#2E7D43; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">متابعة</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:11px; padding:12px 13px;">
+                <div style="width:36px;height:36px;border-radius:50%;background:#F4F7F4;border:1.5px dashed #C5CFC7;display:flex;align-items:center;justify-content:center;color:#9aa89c;font-size:18px;">+</div>
+                <div style="flex:1;"><div style="font-size:13px; font-weight:800; color:#5e6e6a;">دعوة عضو جديد</div><div style="font-size:10px; color:#9aa89c;">حدّد صلاحياته</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="flex:none; height:22px; background:#fff; border-top:1px solid #EBEFEB;"></div>
+        </div>
+<div class="frame" id="s13" data-i="13">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#000; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+
+          <!-- main video -->
+          <div style="position:absolute; inset:0; background:#13414f; background-image:repeating-linear-gradient(135deg,#ffffff0d 0 14px,#0000 14px 28px); display:flex; align-items:center; justify-content:center;">
+            <span style="font-family:ui-monospace,monospace; font-size:11px; color:#5d8595;">بثّ فيديو أمينة</span>
+          </div>
+
+          <!-- top bar -->
+          <div style="position:relative; z-index:10; display:flex; align-items:center; justify-content:space-between; padding:42px 18px 0;">
+            <div style="display:flex; align-items:center; gap:7px; background:#0a2430cc; backdrop-filter:blur(6px); border-radius:20px; padding:6px 12px;">
+              <span style="width:7px;height:7px;border-radius:50%;background:#ff5b5b;"></span>
+              <span style="color:#fff; font-size:11px; font-weight:800;">مباشر · 04:12</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px; background:#2E7D43; border-radius:20px; padding:6px 12px;">
+              <span style="color:#fff; font-size:11px; font-weight:800;">✓ بإشراف الجمعية</span>
+            </div>
+          </div>
+
+          <!-- name tag -->
+          <div style="position:relative; z-index:10; margin-top:14px; padding:0 18px;">
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#0a2430cc; backdrop-filter:blur(6px); border-radius:14px; padding:8px 13px;">
+              <div style="width:30px;height:30px;border-radius:9px;background:#1f6a4a;"></div>
+              <div><div style="color:#fff; font-size:13px; font-weight:800;">أمينة جواو</div><div style="color:#9ec3ab; font-size:10px;">طالبة علم · مابوتو</div></div>
+            </div>
+          </div>
+
+          <div style="flex:1;"></div>
+
+          <!-- live translation caption -->
+          <div style="position:relative; z-index:10; margin:0 16px 14px; background:#0a2430d9; backdrop-filter:blur(8px); border-radius:14px; padding:12px 14px;">
+            <div style="display:flex; align-items:center; gap:6px; margin-bottom:6px;"><span style="width:6px;height:6px;border-radius:50%;background:#7CB342;"></span><span style="font-family:ui-monospace,monospace; font-size:9px; letter-spacing:1px; color:#7CB342;">ترجمة فورية · البرتغالية ← العربية</span></div>
+            <div style="color:#fff; font-size:13px; line-height:1.7;">«أحلم أن أصبح طبيبة وأعود لأبني مستوصفاً في قريتي… شكراً لأنك أردت أن تسمع قصتي بنفسك.»</div>
+          </div>
+
+          <!-- self PIP -->
+          <div style="position:absolute; bottom:108px; left:16px; z-index:11; width:84px; height:116px; border-radius:14px; background:#1a2e36; border:2px solid #ffffff2e; background-image:repeating-linear-gradient(135deg,#ffffff0d 0 8px,#0000 8px 16px); display:flex; align-items:flex-end; justify-content:center; padding-bottom:7px;">
+            <span style="color:#7d97a1; font-size:9px; font-family:ui-monospace,monospace;">أنت</span>
+          </div>
+
+          <!-- controls -->
+          <div style="position:relative; z-index:10; display:flex; align-items:center; justify-content:center; gap:16px; padding:6px 0 30px;">
+            <button style="width:52px;height:52px;border-radius:50%;border:none;background:#ffffff1f;backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;">🎤</button>
+            <button style="width:52px;height:52px;border-radius:50%;border:none;background:#ffffff1f;backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;">📹</button>
+            <button style="width:64px;height:52px;border-radius:26px;border:none;background:#ff4d4d;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;">📞</button>
+            <button style="width:52px;height:52px;border-radius:50%;border:none;background:#ffffff1f;backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;">💬</button>
+          </div>
+        </div>
+<div class="frame" id="s14" data-i="14">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+          <div style="background:#0E3449; flex:none;">
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:14px 22px 8px; font-size:13px; font-weight:800; color:#fff;"><span>9:41</span><div style="display:flex; align-items:center; gap:7px;"><span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:8px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:11px;background:#fff;border-radius:1px;"></i></span><span style="font-family:ui-monospace,monospace;font-size:11px;">5G</span><span style="width:22px;height:11px;border:1.5px solid #fff;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#fff;border-radius:1px;"></span></span></div></div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:2px 16px 12px; color:#fff;"><div style="display:flex; align-items:center; gap:10px;"><span style="width:32px;height:32px;border-radius:9px;border:1.5px solid #ffffff3a;display:flex;align-items:center;justify-content:center;font-size:16px;">→</span><div><div style="font-size:15px; font-weight:800;">مدرسة — بيرا الابتدائية</div><div style="font-size:11px; color:#9ec3ab;">MZ-SCH-204</div></div></div><span style="width:32px;height:32px;border-radius:9px;border:1.5px solid #ffffff3a;display:flex;align-items:center;justify-content:center;font-size:13px;">⤴</span></div>
+          </div>
+          <div class="scr" style="flex:1; overflow-y:auto;">
+            <div style="position:relative; height:130px; background:#16475c; background-image:repeating-linear-gradient(135deg,#ffffff14 0 11px,#0000 11px 22px); display:flex; align-items:center; justify-content:center;"><span style="font-family:ui-monospace,monospace; font-size:10px; color:#7fa6b5;"><img src="assets/logo.png" alt="صورة المدرسة" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span><span style="position:absolute; bottom:12px; right:14px; background:#7CB342; color:#0E3449; font-size:11px; font-weight:900; padding:5px 12px; border-radius:20px;">قيد التشغيل · العام الأول</span></div>
+            <!-- stepper -->
+            <div style="padding:16px 14px 6px;"><div style="font-size:13px; font-weight:800; color:#0E3449; margin-bottom:11px;">مراحل الرحلة</div>
+              <div class="scr" style="display:flex; align-items:center; gap:7px; overflow-x:auto; padding-bottom:4px;">
+                <span style="flex:none; background:#2E7D43; color:#fff; font-size:11px; font-weight:800; padding:7px 12px; border-radius:18px;">✓ اختيار المنطقة</span><span style="color:#c5cfc7;">‹</span>
+                <span style="flex:none; background:#2E7D43; color:#fff; font-size:11px; font-weight:800; padding:7px 12px; border-radius:18px;">✓ اعتماد</span><span style="color:#c5cfc7;">‹</span>
+                <span style="flex:none; background:#2E7D43; color:#fff; font-size:11px; font-weight:800; padding:7px 12px; border-radius:18px;">✓ البناء</span><span style="color:#c5cfc7;">‹</span>
+                <span style="flex:none; background:#2E7D43; color:#fff; font-size:11px; font-weight:800; padding:7px 12px; border-radius:18px;">✓ التجهيز</span><span style="color:#c5cfc7;">‹</span>
+                <span style="flex:none; background:#fff; border:1.5px solid #7CB342; color:#2E7D43; font-size:11px; font-weight:800; padding:7px 12px; border-radius:18px;">● الافتتاح</span><span style="color:#c5cfc7;">‹</span>
+                <span style="flex:none; background:#fff; border:1px solid #E0E6E0; color:#9aa89c; font-size:11px; font-weight:700; padding:7px 12px; border-radius:18px;">التشغيل</span>
+              </div>
+            </div>
+            <!-- school year tracking -->
+            <div style="padding:12px 14px 0;"><div style="font-size:13px; font-weight:800; color:#0E3449; margin-bottom:11px;">تقارير العام الدراسي</div>
+              <div style="display:flex; gap:9px;">
+                <div style="flex:1; background:#fff; border:1px solid #EBEFEB; border-radius:14px; padding:13px; text-align:center;"><div style="font-size:20px; font-weight:900; color:#0E3449;">480</div><div style="font-size:10px; color:#7d8c84; margin-top:2px;">طالباً وطالبة</div></div>
+                <div style="flex:1; background:#fff; border:1px solid #EBEFEB; border-radius:14px; padding:13px; text-align:center;"><div style="font-size:20px; font-weight:900; color:#0E3449;">18</div><div style="font-size:10px; color:#7d8c84; margin-top:2px;">معلّماً</div></div>
+                <div style="flex:1; background:#fff; border:1px solid #EBEFEB; border-radius:14px; padding:13px; text-align:center;"><div style="font-size:20px; font-weight:900; color:#2E7D43;">94%</div><div style="font-size:10px; color:#7d8c84; margin-top:2px;">نسبة النجاح</div></div>
+              </div>
+            </div>
+            <!-- sample report -->
+            <div style="padding:14px 14px 0;"><div style="background:#fff; border:1px solid #EBEFEB; border-radius:14px; padding:13px;">
+              <div style="display:flex; align-items:center; justify-content:space-between;"><span style="background:#0E3449; color:#fff; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">تقرير افتتاح</span><span style="display:inline-flex; align-items:center; gap:4px; background:#2E7D431a; color:#2E7D43; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">✓ موثّق · معتمد</span></div>
+              <div style="font-size:13px; font-weight:800; color:#0E3449; margin:9px 0 4px;">أول يوم دراسي — استقبال 480 طالباً</div>
+              <div style="font-size:11px; color:#7d8c84;">2 يونيو 2026 · 6 صور من الموقع</div>
+            </div></div>
+            <!-- continuity -->
+            <div style="padding:14px 14px 18px;"><div style="font-size:12px; font-weight:800; color:#0E3449; margin-bottom:9px;">بعد الاكتمال — استمرارية</div>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <span style="background:#0E34490d; border:1px solid #0E344918; color:#0E3449; font-size:11px; font-weight:700; padding:8px 12px; border-radius:11px;">كفالة معلّم</span>
+                <span style="background:#0E34490d; border:1px solid #0E344918; color:#0E3449; font-size:11px; font-weight:700; padding:8px 12px; border-radius:11px;">كفالة طالب</span>
+                <span style="background:#0E34490d; border:1px solid #0E344918; color:#0E3449; font-size:11px; font-weight:700; padding:8px 12px; border-radius:11px;">متابعة النتائج</span>
+                <span style="background:#0E34490d; border:1px solid #0E344918; color:#0E3449; font-size:11px; font-weight:700; padding:8px 12px; border-radius:11px;">احتياجات موسمية</span>
+              </div>
+            </div>
+          </div>
+          <div style="flex:none; padding:11px 16px 22px; background:#fff; border-top:1px solid #EBEFEB; display:flex; gap:9px;"><button style="flex:1; background:#0E3449; color:#fff; border:none; border-radius:13px; padding:14px; font-weight:800; font-size:15px; font-family:inherit; cursor:pointer;">ادعم المدرسة</button><button style="background:#F4F7F4; border:none; border-radius:13px; padding:0 16px; font-size:18px; cursor:pointer;">🔔</button></div>
+        </div>
+<div class="frame" id="s15" data-i="15">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+          <div style="background:#0E3449; flex:none;">
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:14px 22px 8px; font-size:13px; font-weight:800; color:#fff;"><span>9:41</span><div style="display:flex; align-items:center; gap:7px;"><span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:8px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:11px;background:#fff;border-radius:1px;"></i></span><span style="font-family:ui-monospace,monospace;font-size:11px;">5G</span><span style="width:22px;height:11px;border:1.5px solid #fff;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#fff;border-radius:1px;"></span></span></div></div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:2px 16px 12px; color:#fff;"><div style="display:flex; align-items:center; gap:10px;"><span style="width:32px;height:32px;border-radius:9px;border:1.5px solid #ffffff3a;display:flex;align-items:center;justify-content:center;font-size:16px;">→</span><div><div style="font-size:15px; font-weight:800;">أضاحي العيد — نامبولا</div><div style="font-size:11px; color:#9ec3ab;">موسم 1447هـ</div></div></div><span style="width:32px;height:32px;border-radius:9px;border:1.5px solid #ffffff3a;display:flex;align-items:center;justify-content:center;font-size:13px;">⤴</span></div>
+          </div>
+          <div class="scr" style="flex:1; overflow-y:auto;">
+            <div style="position:relative; height:130px; background:#16475c; background-image:repeating-linear-gradient(135deg,#ffffff14 0 11px,#0000 11px 22px); display:flex; align-items:center; justify-content:center;"><span style="font-family:ui-monospace,monospace; font-size:10px; color:#7fa6b5;"><img src="assets/logo.png" alt="صورة التوزيع الميداني" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span><span style="position:absolute; bottom:12px; right:14px; background:#C9992f; color:#fff; font-size:11px; font-weight:900; padding:5px 12px; border-radius:20px;">جارٍ التنفيذ</span></div>
+            <div style="padding:16px 14px 6px;"><div style="font-size:13px; font-weight:800; color:#0E3449; margin-bottom:11px;">مراحل الدورة</div>
+              <div class="scr" style="display:flex; align-items:center; gap:7px; overflow-x:auto; padding-bottom:4px;">
+                <span style="flex:none; background:#2E7D43; color:#fff; font-size:11px; font-weight:800; padding:7px 12px; border-radius:18px;">✓ التجهيز</span><span style="color:#c5cfc7;">‹</span>
+                <span style="flex:none; background:#fff; border:1.5px solid #C9992f; color:#9a7720; font-size:11px; font-weight:800; padding:7px 12px; border-radius:18px;">● التنفيذ والذبح</span><span style="color:#c5cfc7;">‹</span>
+                <span style="flex:none; background:#fff; border:1px solid #E0E6E0; color:#9aa89c; font-size:11px; font-weight:700; padding:7px 12px; border-radius:18px;">التوثيق</span><span style="color:#c5cfc7;">‹</span>
+                <span style="flex:none; background:#fff; border:1px solid #E0E6E0; color:#9aa89c; font-size:11px; font-weight:700; padding:7px 12px; border-radius:18px;">التقرير الختامي</span>
+              </div>
+            </div>
+            <!-- live counter -->
+            <div style="padding:12px 14px 0;"><div style="background:linear-gradient(135deg,#0E3449,#2E7D43); border-radius:16px; padding:17px; color:#fff;">
+              <div style="font-size:12px; opacity:.85; margin-bottom:4px;">عدد الأضاحي الموزّعة حتى الآن</div>
+              <div style="display:flex; align-items:baseline; gap:8px;"><div style="font-size:34px; font-weight:900;">186</div><span style="font-size:13px; opacity:.85;">من 250 أضحية</span></div>
+              <div style="height:8px; background:#ffffff24; border-radius:6px; overflow:hidden; margin-top:10px;"><div style="width:74%;height:100%;background:#7CB342;border-radius:6px;"></div></div>
+              <div style="display:flex; justify-content:space-between; margin-top:13px; padding-top:13px; border-top:1px solid #ffffff24;"><div><div style="font-size:16px; font-weight:900;">1,240</div><div style="font-size:10px; opacity:.8;">أسرة مستفيدة</div></div><div><div style="font-size:16px; font-weight:900;">7</div><div style="font-size:10px; opacity:.8;">مناطق</div></div><div><div style="font-size:16px; font-weight:900;">5,800</div><div style="font-size:10px; opacity:.8;">وجبة</div></div></div>
+            </div></div>
+            <!-- sample report -->
+            <div style="padding:14px 14px 0;"><div style="background:#fff; border:1px solid #EBEFEB; border-radius:14px; padding:13px;">
+              <div style="display:flex; align-items:center; justify-content:space-between;"><span style="background:#C9992f; color:#fff; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">توثيق ميداني</span><span style="display:inline-flex; align-items:center; gap:4px; background:#2E7D431a; color:#2E7D43; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">✓ موثّق · معتمد</span></div>
+              <div style="font-size:13px; font-weight:800; color:#0E3449; margin:9px 0 4px;">توزيع اليوم الأول — منطقة موكوبا</div>
+              <div style="font-size:11px; color:#7d8c84;">عدد المستفيدين بخصوصية · 12 صورة موثّقة</div>
+            </div></div>
+            <!-- continuity -->
+            <div style="padding:14px 14px 18px;"><div style="background:#0E34490a; border:1px solid #0E344918; border-radius:14px; padding:13px; display:flex; align-items:center; gap:11px;">
+              <span style="width:34px;height:34px;flex:none;border-radius:10px;background:#2E7D43;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;">🏅</span>
+              <div style="font-size:11px; color:#3f5751; line-height:1.55;"><b style="color:#0E3449;">عند الاكتمال:</b> تقرير ختامي موثّق + شهادة، ودعوة لمواسم قادمة (رمضان / الأضاحي).</div>
+            </div></div>
+          </div>
+          <div style="flex:none; padding:11px 16px 22px; background:#fff; border-top:1px solid #EBEFEB; display:flex; gap:9px;"><button style="flex:1; background:#0E3449; color:#fff; border:none; border-radius:13px; padding:14px; font-weight:800; font-size:15px; font-family:inherit; cursor:pointer;">قدّم أضحية</button><button style="background:#F4F7F4; border:none; border-radius:13px; padding:0 16px; font-size:18px; cursor:pointer;">🔔</button></div>
+        </div>
+<div class="frame" id="s16" data-i="16">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+          <div style="background:#0E3449; flex:none;">
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:14px 22px 8px; font-size:13px; font-weight:800; color:#fff;"><span>9:41</span><div style="display:flex; align-items:center; gap:7px;"><span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:8px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:11px;background:#fff;border-radius:1px;"></i></span><span style="font-family:ui-monospace,monospace;font-size:11px;">5G</span><span style="width:22px;height:11px;border:1.5px solid #fff;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#fff;border-radius:1px;"></span></span></div></div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:2px 16px 12px; color:#fff;"><div style="display:flex; align-items:center; gap:10px;"><span style="width:32px;height:32px;border-radius:9px;border:1.5px solid #ffffff3a;display:flex;align-items:center;justify-content:center;font-size:16px;">→</span><div><div style="font-size:15px; font-weight:800;">توزيع حقائب مدرسية</div><div style="font-size:11px; color:#9ec3ab;">نامبولا · 1,200 طالب</div></div></div><span style="width:32px;height:32px;border-radius:9px;border:1.5px solid #ffffff3a;display:flex;align-items:center;justify-content:center;font-size:13px;">⤴</span></div>
+          </div>
+          <div class="scr" style="flex:1; overflow-y:auto;">
+            <div style="position:relative; height:130px; background:#16475c; background-image:repeating-linear-gradient(135deg,#ffffff14 0 11px,#0000 11px 22px); display:flex; align-items:center; justify-content:center;"><span style="font-family:ui-monospace,monospace; font-size:10px; color:#7fa6b5;"><img src="assets/logo.png" alt="صورة التسليم" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span><span style="position:absolute; bottom:12px; right:14px; background:#7CB342; color:#0E3449; font-size:11px; font-weight:900; padding:5px 12px; border-radius:20px;">دفعة 2 من 3</span></div>
+            <div style="padding:16px 14px 6px;"><div style="font-size:13px; font-weight:800; color:#0E3449; margin-bottom:11px;">مراحل التوزيع</div>
+              <div class="scr" style="display:flex; align-items:center; gap:7px; overflow-x:auto; padding-bottom:4px;">
+                <span style="flex:none; background:#2E7D43; color:#fff; font-size:11px; font-weight:800; padding:7px 12px; border-radius:18px;">✓ التجهيز</span><span style="color:#c5cfc7;">‹</span>
+                <span style="flex:none; background:#2E7D43; color:#fff; font-size:11px; font-weight:800; padding:7px 12px; border-radius:18px;">✓ الشراء</span><span style="color:#c5cfc7;">‹</span>
+                <span style="flex:none; background:#fff; border:1.5px solid #7CB342; color:#2E7D43; font-size:11px; font-weight:800; padding:7px 12px; border-radius:18px;">● التوزيع والتسليم</span><span style="color:#c5cfc7;">‹</span>
+                <span style="flex:none; background:#fff; border:1px solid #E0E6E0; color:#9aa89c; font-size:11px; font-weight:700; padding:7px 12px; border-radius:18px;">التوثيق</span>
+              </div>
+            </div>
+            <!-- quantity tracking -->
+            <div style="padding:12px 14px 0;"><div style="font-size:13px; font-weight:800; color:#0E3449; margin-bottom:11px;">المتابعة الكمّية</div>
+              <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:15px;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;"><span style="font-size:12px; color:#7d8c84;">سُلّمت <b style="color:#0E3449;">820</b> من 1,200 حقيبة</span><span style="font-size:13px; font-weight:900; color:#2E7D43;">68%</span></div>
+                <div style="height:9px; background:#E7ECE7; border-radius:6px; overflow:hidden;"><div style="width:68%;height:100%;background:#7CB342;border-radius:6px;"></div></div>
+                <div style="display:flex; gap:9px; margin-top:13px;">
+                  <div style="flex:1; background:#F4F7F4; border-radius:12px; padding:10px; text-align:center;"><div style="font-size:15px; font-weight:900; color:#0E3449;">5</div><div style="font-size:10px; color:#7d8c84;">مدارس</div></div>
+                  <div style="flex:1; background:#F4F7F4; border-radius:12px; padding:10px; text-align:center;"><div style="font-size:15px; font-weight:900; color:#0E3449;">820</div><div style="font-size:10px; color:#7d8c84;">مستفيد</div></div>
+                  <div style="flex:1; background:#F4F7F4; border-radius:12px; padding:10px; text-align:center;"><div style="font-size:15px; font-weight:900; color:#0E3449;">2/3</div><div style="font-size:10px; color:#7d8c84;">دفعات</div></div>
+                </div>
+              </div>
+            </div>
+            <!-- sample report -->
+            <div style="padding:14px 14px 0;"><div style="background:#fff; border:1px solid #EBEFEB; border-radius:14px; padding:13px;">
+              <div style="display:flex; align-items:center; justify-content:space-between;"><span style="background:#0E3449; color:#fff; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">صور تسليم</span><span style="display:inline-flex; align-items:center; gap:4px; background:#2E7D431a; color:#2E7D43; font-size:10px; font-weight:800; padding:4px 9px; border-radius:7px;">✓ موثّق · معتمد</span></div>
+              <div style="font-size:13px; font-weight:800; color:#0E3449; margin:9px 0 4px;">تسليم الدفعة الثانية — مدرسة موكوبا</div>
+              <div style="font-size:11px; color:#7d8c84;">320 حقيبة · 8 صور · إيصالات استلام</div>
+            </div></div>
+            <div style="padding:14px 14px 18px;"><div style="font-size:12px; font-weight:800; color:#0E3449; margin-bottom:9px;">بعد الاكتمال</div>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <span style="background:#0E34490d; border:1px solid #0E344918; color:#0E3449; font-size:11px; font-weight:700; padding:8px 12px; border-radius:11px;">تقرير ختامي + شهادة</span>
+                <span style="background:#0E34490d; border:1px solid #0E344918; color:#0E3449; font-size:11px; font-weight:700; padding:8px 12px; border-radius:11px;">فرص توزيع متجدّدة</span>
+              </div>
+            </div>
+          </div>
+          <div style="flex:none; padding:11px 16px 22px; background:#fff; border-top:1px solid #EBEFEB; display:flex; gap:9px;"><button style="flex:1; background:#0E3449; color:#fff; border:none; border-radius:13px; padding:14px; font-weight:800; font-size:15px; font-family:inherit; cursor:pointer;">موّل دفعة توزيع</button><button style="background:#F4F7F4; border:none; border-radius:13px; padding:0 16px; font-size:18px; cursor:pointer;">🔔</button></div>
+        </div>
+<div class="frame" id="s17" data-i="17">
+          <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:116px; height:26px; background:#0c0d0e; border-bottom-left-radius:16px; border-bottom-right-radius:16px; z-index:40;"></div>
+          <div style="background:#0E3449; flex:none;">
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:14px 22px 8px; font-size:13px; font-weight:800; color:#fff;"><span>9:41</span><div style="display:flex; align-items:center; gap:7px;"><span style="display:flex; align-items:flex-end; gap:2px;"><i style="width:3px;height:5px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:8px;background:#fff;border-radius:1px;"></i><i style="width:3px;height:11px;background:#fff;border-radius:1px;"></i></span><span style="font-family:ui-monospace,monospace;font-size:11px;">5G</span><span style="width:22px;height:11px;border:1.5px solid #fff;border-radius:3px;padding:1.5px;display:inline-flex;box-sizing:border-box;"><span style="flex:1;background:#fff;border-radius:1px;"></span></span></div></div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:2px 16px 12px; color:#fff;"><div style="display:flex; align-items:center; gap:10px;"><span style="width:32px;height:32px;border-radius:9px;border:1.5px solid #ffffff3a;display:flex;align-items:center;justify-content:center;font-size:16px;">→</span><div><div style="font-size:15px; font-weight:800;">حملة إبصار — كيليماني</div><div style="font-size:11px; color:#9ec3ab;">MZ-MED-077</div></div></div><span style="width:32px;height:32px;border-radius:9px;border:1.5px solid #ffffff3a;display:flex;align-items:center;justify-content:center;font-size:13px;">⤴</span></div>
+          </div>
+          <div class="scr" style="flex:1; overflow-y:auto;">
+            <div style="position:relative; height:130px; background:#16475c; background-image:repeating-linear-gradient(135deg,#ffffff14 0 11px,#0000 11px 22px); display:flex; align-items:center; justify-content:center;"><span style="font-family:ui-monospace,monospace; font-size:10px; color:#7fa6b5;"><img src="assets/logo.png" alt="صورة الحملة الطبية" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span><span style="position:absolute; bottom:12px; right:14px; background:#7CB342; color:#0E3449; font-size:11px; font-weight:900; padding:5px 12px; border-radius:20px;">قيد التنفيذ</span></div>
+            <div style="padding:16px 14px 6px;"><div style="font-size:13px; font-weight:800; color:#0E3449; margin-bottom:11px;">مراحل الحملة</div>
+              <div class="scr" style="display:flex; align-items:center; gap:7px; overflow-x:auto; padding-bottom:4px;">
+                <span style="flex:none; background:#2E7D43; color:#fff; font-size:11px; font-weight:800; padding:7px 12px; border-radius:18px;">✓ الكشف</span><span style="color:#c5cfc7;">‹</span>
+                <span style="flex:none; background:#2E7D43; color:#fff; font-size:11px; font-weight:800; padding:7px 12px; border-radius:18px;">✓ اعتماد الحالات</span><span style="color:#c5cfc7;">‹</span>
+                <span style="flex:none; background:#fff; border:1.5px solid #7CB342; color:#2E7D43; font-size:11px; font-weight:800; padding:7px 12px; border-radius:18px;">● إجراء العمليات</span><span style="color:#c5cfc7;">‹</span>
+                <span style="flex:none; background:#fff; border:1px solid #E0E6E0; color:#9aa89c; font-size:11px; font-weight:700; padding:7px 12px; border-radius:18px;">المتابعة بعد العملية</span>
+              </div>
+            </div>
+            <!-- ops count -->
+            <div style="padding:12px 14px 0;"><div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:15px;">
+              <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;"><span style="font-size:12px; color:#7d8c84;">أُجريت <b style="color:#0E3449;">142</b> من 200 عملية</span><span style="font-size:13px; font-weight:900; color:#2E7D43;">71%</span></div>
+              <div style="height:9px; background:#E7ECE7; border-radius:6px; overflow:hidden;"><div style="width:71%;height:100%;background:#7CB342;border-radius:6px;"></div></div>
+              <div style="display:flex; gap:9px; margin-top:13px;">
+                <div style="flex:1; background:#F4F7F4; border-radius:12px; padding:10px; text-align:center;"><div style="font-size:15px; font-weight:900; color:#0E3449;">142</div><div style="font-size:10px; color:#7d8c84;">مستفيد أبصر</div></div>
+                <div style="flex:1; background:#F4F7F4; border-radius:12px; padding:10px; text-align:center;"><div style="font-size:15px; font-weight:900; color:#2E7D43;">98%</div><div style="font-size:10px; color:#7d8c84;">نجاح طبي</div></div>
+                <div style="flex:1; background:#F4F7F4; border-radius:12px; padding:10px; text-align:center;"><div style="font-size:15px; font-weight:900; color:#0E3449;">3</div><div style="font-size:10px; color:#7d8c84;">أطباء</div></div>
+              </div>
+            </div></div>
+            <!-- before/after -->
+            <div style="padding:14px 14px 0;"><div style="font-size:13px; font-weight:800; color:#0E3449; margin-bottom:11px;">حالة موثّقة — قبل / بعد</div>
+              <div style="background:#fff; border:1px solid #EBEFEB; border-radius:16px; padding:13px;">
+                <div style="display:flex; gap:10px;">
+                  <div style="flex:1; position:relative; height:96px; border-radius:12px; background:#DDE5DE; background-image:repeating-linear-gradient(135deg,#0e344912 0 8px,#0000 8px 16px); display:flex; align-items:center; justify-content:center;"><span style="position:absolute; top:8px; right:8px; background:#0E3449cc; color:#fff; font-size:9px; font-weight:800; padding:3px 7px; border-radius:6px;">قبل</span><span style="font-family:ui-monospace,monospace; font-size:9px; color:#9aa89c;"><img src="assets/logo.png" alt="صورة" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span></div>
+                  <div style="flex:1; position:relative; height:96px; border-radius:12px; background:#DDE5DE; background-image:repeating-linear-gradient(135deg,#7cb3421f 0 8px,#0000 8px 16px); display:flex; align-items:center; justify-content:center;"><span style="position:absolute; top:8px; right:8px; background:#2E7D43; color:#fff; font-size:9px; font-weight:800; padding:3px 7px; border-radius:6px;">بعد</span><span style="font-family:ui-monospace,monospace; font-size:9px; color:#9aa89c;"><img src="assets/logo.png" alt="صورة" style="max-height:70px;max-width:60%;opacity:.55;object-fit:contain"/></span></div>
+                </div>
+                <div style="display:flex; align-items:center; gap:7px; margin-top:11px; padding-top:11px; border-top:1px solid #F0F3F0;"><span style="width:22px;height:22px;border-radius:7px;background:#2E7D43;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;">✓</span><span style="font-size:11px; color:#3f5751; line-height:1.5;">تُنشر الصور بموافقة المريض فقط، مع تقرير طبي موثّق.</span></div>
+              </div>
+            </div>
+            <div style="padding:14px 14px 18px;"><div style="font-size:12px; font-weight:800; color:#0E3449; margin-bottom:9px;">بعد الاكتمال</div>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <span style="background:#0E34490d; border:1px solid #0E344918; color:#0E3449; font-size:11px; font-weight:700; padding:8px 12px; border-radius:11px;">متابعة ما بعد العملية</span>
+                <span style="background:#0E34490d; border:1px solid #0E344918; color:#0E3449; font-size:11px; font-weight:700; padding:8px 12px; border-radius:11px;">حملات بصرية جديدة</span>
+              </div>
+            </div>
+          </div>
+          <div style="flex:none; padding:11px 16px 22px; background:#fff; border-top:1px solid #EBEFEB; display:flex; gap:9px;"><button style="flex:1; background:#0E3449; color:#fff; border:none; border-radius:13px; padding:14px; font-weight:800; font-size:15px; font-family:inherit; cursor:pointer;">اكفل عملية إبصار</button><button style="background:#F4F7F4; border:none; border-radius:13px; padding:0 16px; font-size:18px; cursor:pointer;">🔔</button></div>
+        </div>
+</div>
+<div id="toast"></div>
+
+<script>
+const I = {
+  home:0, project:1, reports:2, finance:3, community:4, wallet:5, impact:6,
+  mosque:7, cases:8, amina:9, mysponsor:10, share:11, partner:12, video:13,
+  school:14, adahi:15, bags:16, medical:17
+};
+let hist = [0];
+
+function show(i){
+  document.querySelectorAll('.frame').forEach(f=>f.classList.toggle('on', +f.dataset.i===i));
+  window.scrollTo(0,0);
+}
+function go(i){ if(i!==hist[hist.length-1]){ hist.push(i); } show(i); }
+function back(){ if(hist.length>1){ hist.pop(); } show(hist[hist.length-1]); }
+function toast(t){ const e=document.getElementById('toast'); e.textContent=t; e.classList.add('show'); clearTimeout(e._t); e._t=setTimeout(()=>e.classList.remove('show'),1600); }
+
+// تكبير المرحلة لملء عرض الشاشة (يحافظ على التصميم 348px بالحرف)
+function fit(){
+  const s = Math.min(window.innerWidth/348, 1.35);
+  document.getElementById('stage').style.transform = 'scale('+s+')';
+  document.body.style.height = (document.querySelector('.frame.on')?.offsetHeight*s + 40)+'px';
+}
+window.addEventListener('resize', fit);
+
+// خريطة النصوص ← الشاشات (لتفعيل كل زر)
+const MAP = [
+  [['الرئيسية'], I.home],
+  [['المشاريع'], I.project],
+  [['محفظتي','مشاريعي'], I.wallet],
+  [['المجتمع والآراء','المجتمع','تقييم المشروع','آراء المتبرّعين','اسأل متبرّع'], I.community],
+  [['المزيد'], I.cases],
+  [['التايم لاين','المرحلة','تابِع','تابع مشاريعك','تابع'], I.project],
+  [['تقارير المتابعة','التقارير','سجل تقارير'], I.reports],
+  [['المالية','الشفافية المالية'], I.finance],
+  [['كفالاتي','مقابلاتي'], I.mysponsor],
+  [['تقرير أثرك','تقرير الأثر','الدفعة العاطفية'], I.impact],
+  [['حكايات تستحق','كفالة','تبنّى','تبني'], I.cases],
+  [['أمينة'], I.amina],
+  [['مسجد'], I.mosque],
+  [['مدرسة'], I.school],
+  [['مؤسسة النماء','شريك موثّق','مانح مؤسسي'], I.partner],
+  [['بثّ','فيديو'], I.video],
+  [['موسم','الأضاحي','أضحيتك'], I.adahi],
+  [['حقائب'], I.bags],
+  [['طبية','الحملة الطبية','المياه البيضاء'], I.medical],
+  [['شهادة','مشاركة الأثر','شير في الخير','شهادة إتمام'], I.share],
+];
+const BACK = ['‹','›','→','←','رجوع'];
+const DONATE = ['تبرّع الآن','تبرّع لهذا المشروع','تبرّع','ادفع','اكفل الآن','تبرّع وكفالة'];
+
+function findTarget(txt){
+  txt = (txt||'').trim();
+  for(const [keys,idx] of MAP){ for(const k of keys){ if(txt===k || txt.startsWith(k)) return idx; } }
+  return null;
+}
+
+document.addEventListener('click', function(e){
+  let el = e.target;
+  for(let d=0; d<5 && el; d++, el = el.parentElement){
+    const txt = (el.textContent||'').trim();
+    if(txt.length>60){ continue; }
+    // رجوع
+    if(BACK.includes(txt)){ back(); return; }
+    // تبرّع
+    if(DONATE.some(k=>txt===k)){ toast('تم فتح صفحة الدفع (تجريبي)'); return; }
+    // تنقّل
+    const t = findTarget(txt);
+    if(t!==null){ go(t); return; }
+  }
+}, true);
+
+// عند التحميل
+show(0); fit();
+setTimeout(fit, 300);
+</script>
+</body>
+</html>
