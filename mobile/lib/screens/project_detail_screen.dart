@@ -105,9 +105,38 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
             ),
           ],
         ),
-        const SizedBox(height: 18),
+        const SizedBox(height: 14),
+        _statusChip(d),
+        const SizedBox(height: 16),
         ...List.generate(d.stages.length, (i) => _stageTile(d.stages[i], i == d.stages.length - 1)),
       ],
+    );
+  }
+
+  Widget _statusChip(ProjectDetail d) {
+    final Color c = d.status == 'delayed'
+        ? Colors.red.shade600
+        : d.status == 'at_risk'
+            ? AppColors.gold
+            : AppColors.green;
+    final IconData ic = d.status == 'on_track' ? Icons.check_circle : Icons.warning_amber_rounded;
+    String extra = '';
+    if (d.status == 'delayed' && d.delayDays > 0) extra = ' (متأخّر ${d.delayDays} يوم)';
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+      decoration: BoxDecoration(
+        color: c.withOpacity(.10),
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: c.withOpacity(.4)),
+      ),
+      child: Row(
+        children: [
+          Icon(ic, color: c, size: 20),
+          const SizedBox(width: 8),
+          Text('حالة المشروع: ${d.statusLabel}$extra',
+              style: TextStyle(color: c, fontWeight: FontWeight.bold, fontSize: 13)),
+        ],
+      ),
     );
   }
 
@@ -179,13 +208,23 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
                       style: const TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 14)),
                   const SizedBox(height: 2),
-                  Text(
-                    s.state == 'now'
-                        ? 'جارٍ الآن — ${s.progress}%'
-                        : (s.stageDate ?? ''),
-                    style:
-                        const TextStyle(color: AppColors.muted, fontSize: 11),
-                  ),
+                  if (s.state == 'now')
+                    Text('جارٍ الآن — ${s.progress}%',
+                        style: const TextStyle(
+                            color: AppColors.muted, fontSize: 11)),
+                  if (s.plannedStart != null || s.plannedEnd != null)
+                    Row(
+                      children: [
+                        const Icon(Icons.schedule,
+                            size: 12, color: AppColors.muted),
+                        const SizedBox(width: 4),
+                        Text(
+                          'المدى: ${s.plannedStart ?? '—'} ← ${s.plannedEnd ?? '—'}',
+                          style: const TextStyle(
+                              color: AppColors.muted, fontSize: 11),
+                        ),
+                      ],
+                    ),
                   if (s.approved)
                     const Padding(
                       padding: EdgeInsets.only(top: 4),

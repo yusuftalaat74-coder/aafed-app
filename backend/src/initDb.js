@@ -9,37 +9,112 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 async function main() {
   const schema = fs.readFileSync(path.join(__dirname, "../db/schema.sql"), "utf8");
   await pool.query(schema);
-  console.log("✓ تم إنشاء الجداول");
+  console.log("✓ تم إنشاء/تحديث الجداول");
 
-  // بيانات تجريبية (idempotent بسيطة)
   const { rows } = await pool.query("SELECT COUNT(*)::int AS c FROM projects");
   if (rows[0].c === 0) {
     await pool.query(
       `INSERT INTO countries (name_ar, name_en) VALUES ('موزمبيق','Mozambique'),('مصر','Egypt'),('السعودية','Saudi Arabia')`
     );
     await pool.query(
-      `INSERT INTO regions (country_id, name_ar, city, priority, preacher, need_note)
-       VALUES (1,'نامبولا','نامبولا','عاجلة','د. عبدالله م.','8,500 شخص بلا رعاية على بُعد 40 كم')`
+      `INSERT INTO regions (country_id, name_ar, city, priority, preacher, need_note) VALUES
+       (1,'نامبولا','نامبولا','عاجلة','د. عبدالله م.','8,500 شخص بلا رعاية على بُعد 40 كم'),
+       (1,'بيمبا','بيمبا','متوسطة','د. يوسف ك.','قرية بحاجة لمسجد ومصلى')`
     );
+    // مشروع 1: مركز صحي — في الموعد
     await pool.query(
       `INSERT INTO projects (region_id, type, title_ar, summary_ar, budget_minor, raised_minor, currency, progress, status, verified)
        VALUES (1,'health_center','مركز نامبولا الصحي','رعاية صحية لقرية بلا مركز قريب',5000000,3100000,'USD',62,'active',true)`
     );
+    // مشروع 2: مسجد — متأخّر (لإظهار التنبيه)
     await pool.query(
-      `INSERT INTO project_stages (project_id, title_ar, progress, state, approved, stage_date) VALUES
-       (1,'اختيار المنطقة واعتماد الحاجة',100,'done',true,'2026-03-01'),
-       (1,'اعتماد الميزانية والتصميم',100,'done',true,'2026-04-01'),
-       (1,'التأسيس والبناء',100,'done',true,'2026-05-01'),
-       (1,'التشطيب والتجهيز الطبي',62,'now',true,'2026-06-15'),
-       (1,'الافتتاح وأول مريض',0,'pending',false,'2026-09-01')`
+      `INSERT INTO projects (region_id, type, title_ar, summary_ar, budget_minor, raised_minor, currency, progress, status, verified)
+       VALUES (2,'mosque','مسجد قرية بيمبا','بناء مسجد ومصلى للقرية',3000000,1200000,'USD',40,'active',true)`
     );
+
+    // مراحل مشروع 1 (بمدى زمني)
+    await pool.query(
+      `INSERT INTO project_stages (project_id, title_ar, progress, state, approved, planned_start, planned_end, actual_start, actual_end) VALUES
+       (1,'اختيار المنطقة واعتماد الحاجة',100,'done',true,'2026-03-01','2026-03-15','2026-03-01','2026-03-14'),
+       (1,'اعتماد الميزانية والتصميم',100,'done',true,'2026-03-16','2026-04-15','2026-03-16','2026-04-12'),
+       (1,'التأسيس والبناء',100,'done',true,'2026-04-16','2026-05-31','2026-04-16','2026-05-28'),
+       (1,'التشطيب والتجهيز الطبي',62,'now',true,'2026-06-01','2026-07-30','2026-06-01',NULL),
+       (1,'الافتتاح وأول مريض',0,'pending',false,'2026-08-01','2026-09-01',NULL,NULL)`
+    );
+    // مراحل مشروع 2 (المرحلة الجارية تجاوزت موعدها → متأخّر)
+    await pool.query(
+      `INSERT INTO project_stages (project_id, title_ar, progress, state, approved, planned_start, planned_end, actual_start, actual_end) VALUES
+       (2,'اختيار المنطقة',100,'done',true,'2026-02-01','2026-02-20','2026-02-01','2026-02-18'),
+       (2,'الأساسات والبناء',40,'now',true,'2026-03-01','2026-06-01','2026-03-05',NULL),
+       (2,'التجهيز والافتتاح',0,'pending',false,'2026-06-15','2026-07-15',NULL,NULL)`
+    );
+
     await pool.query(
       `INSERT INTO monitoring_reports (project_id, kind, body_ar, approved) VALUES
        (1,'progress','اكتمل صبّ الأساسات وبدأ بناء الجدران الخارجية.',true),
        (1,'spend','صرف 540$ على التجهيزات الطبية الأولية — موثّق.',true),
        (1,'progress','تركيب الأبواب والنوافذ وبدء أعمال الدهان الداخلي.',true)`
     );
-    console.log("✓ تمت إضافة بيانات تجريبية");
+
+    // القسم الإعلامي
+    await pool.query(
+      `INSERT INTO media_tasks (project_id, need_type, status, notes) VALUES
+       (1,'video','needed','تصوير فيديو لمرحلة التشطيب'),
+       (1,'photo','shot','صور التجهيز الطبي — بانتظار النشر'),
+       (2,'photo','needed','تصوير فوتوغرافي لموقع البناء المتأخّر'),
+       (2,'video','edited','فيديو الأساسات جاهز ولم يُنشر')`
+    );
+
+    // قصص إنسانية + أخبار مقترحة
+    await pool.query(
+      `INSERT INTO stories (project_id, title_ar, body_ar, published) VALUES
+       (1,'أمينة تحلم أن تصبح طبيبة','قصة طفلة من نامبولا تنتظر افتتاح المركز.',false)`
+    );
+    await pool.query(
+      `INSERT INTO project_news (project_id, title_ar, body_ar, status) VALUES
+       (1,'اقتراب افتتاح مركز نامبولا الصحي','المركز في مراحله الأخيرة قبل الافتتاح.','suggested'),
+       (2,'حملة لاستكمال مسجد بيمبا','المشروع بحاجة لدعم لاستكمال البناء.','suggested')`
+    );
+
+    // أخبار من موزمبيق — النبض العام
+    await pool.query(
+      `INSERT INTO country_pulse (country_id, headline_ar, body_ar, pulse) VALUES
+       (1,'موسم الأمطار يبدأ في الشمال','قد يؤثّر على حركة مواد البناء في بعض المناطق.','concern'),
+       (1,'افتتاح طريق جديد قرب نامبولا','يسهّل وصول المساعدات للقرى.','positive')`
+    );
+
+    // CRM المتعاونين + مشاريعهم + تقاريرهم الدورية
+    await pool.query(
+      `INSERT INTO collaborators (type, name, contact, notes) VALUES
+       ('organization','مؤسسة الخير القابضة','partners@khair.org','مانح مؤسسي — تقارير ربع سنوية'),
+       ('individual','أ. محمد سعيد','m.saeed@email.com','متبرّع فرد منتظم')`
+    );
+    await pool.query(
+      `INSERT INTO collaborator_projects (collaborator_id, project_id) VALUES (1,1),(1,2),(2,1)`
+    );
+    await pool.query(
+      `INSERT INTO collaborator_reports (collaborator_id, period, sent_at, summary_ar) VALUES
+       (1,'ربع سنوي','2026-04-01','تقرير الربع الأول: تقدّم المركز الصحي 45%'),
+       (2,'شهري','2026-06-01','تحديث شهري عن كفالتك ومشروعك')`
+    );
+
+    // تقييم المتبرّع للجمعية + اقتراح
+    await pool.query(
+      `INSERT INTO donors (type, name, email) VALUES ('individual','يوسف طلعت','yusuf@email.com')`
+    );
+    await pool.query(
+      `INSERT INTO association_feedback (donor_id, rating_org, rating_reports, suggestion_ar) VALUES
+       (1,5,4,'حابب التقارير تيجي بصور أكتر من الموقع')`
+    );
+
+    // تنبيهات المدير الأولية
+    await pool.query(
+      `INSERT INTO notifications (type, project_id, title_ar, body_ar, severity) VALUES
+       ('delay_risk',2,'مشروع متأخّر','مسجد قرية بيمبا تجاوز الموعد المخطّط للمرحلة الجارية.','warning'),
+       ('report',1,'تقرير متابعة جديد','تم رفع تقرير تقدّم لمركز نامبولا.','info')`
+    );
+
+    console.log("✓ تمت إضافة بيانات تجريبية موسّعة");
   }
   await pool.end();
 }
