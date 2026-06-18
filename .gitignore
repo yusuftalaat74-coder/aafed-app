@@ -1,0 +1,28 @@
+# ===== Node / Backend =====
+node_modules/
+.env
+.env.local
+npm-debug.log*
+dist/
+coverage/
+
+# ===== Flutter / Dart =====
+mobile/.dart_tool/
+mobile/.packages
+mobile/build/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/.pub-cache/
+mobile/.pub/
+mobile/ios/Pods/
+mobile/ios/.symlinks/
+mobile/android/.gradle/
+mobile/android/local.properties
+*.iml
+
+# ===== OS / Editor =====
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
