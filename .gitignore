@@ -20,6 +20,10 @@ mobile/android/.gradle/
 mobile/android/local.properties
 *.iml
 
+# ===== Capacitor (Android project generated in CI) =====
+android/
+package-lock.json
+
 # ===== OS / Editor =====
 .DS_Store
 Thumbs.db
