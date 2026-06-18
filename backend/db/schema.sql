@@ -186,3 +186,8 @@ CREATE TABLE IF NOT EXISTS association_feedback (
   suggestion_ar  TEXT,
   created_at     TIMESTAMPTZ DEFAULT now()
 );
+
+-- المدفوعات: حالة ومرجع مزوّد الدفع (جاهز للربط بأي مزوّد)
+ALTER TABLE donations ADD COLUMN IF NOT EXISTS status       TEXT DEFAULT 'paid'; -- pending / paid / failed
+ALTER TABLE donations ADD COLUMN IF NOT EXISTS provider     TEXT;
+ALTER TABLE donations ADD COLUMN IF NOT EXISTS provider_ref TEXT;

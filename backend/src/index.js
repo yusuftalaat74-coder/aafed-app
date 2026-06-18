@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import projectsRouter from "./routes/projects.js";
 import donationsRouter from "./routes/donations.js";
+import paymentsRouter from "./routes/payments.js";
 import notificationsRouter from "./routes/notifications.js";
 import mediaRouter from "./routes/media.js";
 import contentRouter from "./routes/content.js";
@@ -20,6 +21,7 @@ app.get("/api/health", (_req, res) => res.json({ ok: true, service: "aafed-api" 
 
 app.use("/api/projects", projectsRouter);
 app.use("/api/donations", donationsRouter);
+app.use("/api/payments", paymentsRouter);
 app.use("/api/notifications", notificationsRouter);
 app.use("/api/media", mediaRouter);
 app.use("/api/content", contentRouter);
